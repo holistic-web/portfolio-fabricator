@@ -8,8 +8,12 @@
 			alt="code image"/>
 
 		<section class="text-align-left">
-			<p class="Hero__text lead">King in the North and a Bastard of some king. Currently based in Winterfell. Specialising in Node.js, Firebase & Vue.</p>
-			<p class="Hero__text lead">I use agile development methods and cutting edge web technonology to deliver rapid results.</p>
+			<p class="Hero__text lead">
+				King in the North and a Bastard of some king. Currently based in Winterfell. Specialising in Node.js, Firebase & Vue.
+			</p>
+			<p class="Hero__text lead">
+				I use agile development methods and cutting edge web technonology to deliver rapid results.
+			</p>
 		</section>
 	</b-container>
 </template>
