@@ -3,7 +3,7 @@
 
 		<app-header/>
 
-		<router-view/>
+		<hero/>
 
 		<app-footer/>
 
@@ -12,11 +12,13 @@
 
 <script>
 import AppHeader from '@/components/AppHeader.vue';
+import Hero from '@/components/Hero.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
 export default {
 	components: {
 		AppHeader,
+		Hero,
 		AppFooter
 	}
 };
