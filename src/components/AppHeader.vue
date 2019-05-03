@@ -5,12 +5,12 @@
 
 		<div class="Header__inner">
 
-			<router-link
+			<b-link
 				class="Header__title"
 				to="/">
 				Jon Snow&nbsp;
 				<span class="Header__title--light">- Bastard</span>
-			</router-link>
+			</b-link>
 
 			<b-link
 				href="https://github.com/holistic-web"
