@@ -13,10 +13,7 @@
 
 			<section class="text-align-left">
 				<p class="Landing__text lead">
-					King in the North and a Bastard of some king. Currently based in Winterfell. Specialising in Node.js, Firebase & Vue.
-				</p>
-				<p class="Landing__text lead">
-					I use agile development methods and cutting edge web technonology to deliver rapid results.
+					King in the North and a bastard of Lord Eddard Stark. I ride dragons and kill white walkers and stuff. Don't @ me.
 				</p>
 			</section>
 		</b-container>
