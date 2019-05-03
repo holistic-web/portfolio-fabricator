@@ -17,7 +17,6 @@
 					</li>
 				</ul>
 			</li>
-
 		</ul>
 
 	</b-container>
@@ -42,7 +41,6 @@
 			flex-direction: row;
 			justify-content: space-between;
 		}
-
 	}
 }
 </style>
