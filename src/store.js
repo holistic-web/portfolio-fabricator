@@ -19,7 +19,16 @@ export default new Vuex.Store({
 			externalProfiles: {
 				github: 'holistic-web',
 				linkenIn: 'jon-snow-691533183'
-			}
+			},
+			education: [
+				{
+					institution: 'Night\'s Watch',
+					date: 'Seasons 2 - 5 (ish)',
+					qualifications: [
+						'A+ in white walker slaying'
+					]
+				}
+			]
 		}
 	},
 	getters: {
