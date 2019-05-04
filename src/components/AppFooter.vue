@@ -7,7 +7,9 @@
 
 			<p class="Footer__tagLine">If you'd like to send me an email, or, look at my Online media, click the links below.</p>
 
-			<b-button class="Footer__emailButton" href="mailto:kinginthenorth2019@gmail.com" variant="outline-warning">kinginthenorth2019@gmail.com</b-button>
+			<b-button class="Footer__emailButton" href="mailto:kinginthenorth2019@gmail.com" variant="outline-warning">
+				kinginthenorth2019@gmail.com
+			</b-button>
 
 			<section class="Footer__links">
 				<b-link
