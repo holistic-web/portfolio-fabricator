@@ -3,22 +3,41 @@
 		<h2>Experience</h2>
 
 		<ul>
-			<li class="Experience__item">
+			<li
+				v-for="(item, i) in context.experience"
+				:key="i"
+				class="Experience__item">
+
 				<div class="Experience__item__row">
-					<h3>Willy Wonka's Factory</h3>
-					<p>March 2017 (3 months)</p>
+					<h3 v-text="item.company"/>
+					<span v-text="item.date"/>
 				</div>
-				<p>Intern as chocolate stirrer</p>
-				<div class="Experience__item__row">
+				<p v-text="item.description"/>
+				<section>
 					<h4>Projects</h4>
-				</div>
-				<ul>
-					<li>Built a cool app</li>
-				</ul>
+					<ul>
+						<li
+							v-for="(project, i) in item.projects"
+							:key="i"
+							v-text="project"/>
+					</ul>
+				</section>
 			</li>
 		</ul>
 	</b-container>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+
+export default {
+	computed: {
+		...mapGetters({
+			context: 'context'
+		})
+	}
+};
+</script>
 
 <style lang="scss">
 @import "../styles/index.scss";
