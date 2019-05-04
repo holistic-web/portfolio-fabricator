@@ -8,19 +8,19 @@
 			<b-link
 				class="Header__title"
 				to="/">
-				Jon Snow&nbsp;
-				<span class="Header__title--light">- Bastard</span>
+				{{context.name.first}} {{context.name.last}}&nbsp;
+				<span class="Header__title--light">- {{context.profession}}</span>
 			</b-link>
 
 			<b-link
-				href="https://github.com/holistic-web"
+				:href="`https://github.com/${context.externalProfiles.github}`"
 				target="_blank"
 				title="Check me out on github!"
 				v-b-tooltip.hover>
 				<img
-					class="Header__icon"
+					class="Footer__icon"
 					src="../assets/icons/github.svg"
-					alt="github/holisticweb"/>
+					:alt="`github/${context.externalProfiles.github}`"/>
 			</b-link>
 
 		</div>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
 	data() {
 		return {
@@ -36,6 +38,9 @@ export default {
 		};
 	},
 	computed: {
+		...mapGetters({
+			context: 'context'
+		}),
 		headerShadowClassName() {
 			if (this.scrollDistance > 10) return 'Header--shadow';
 			return '';

@@ -8,6 +8,11 @@ Vue.use(Vuex);
 export default new Vuex.Store({
 	state: {
 		context: {
+			name: {
+				first: 'Jon',
+				last: 'Snow'
+			},
+			profession: 'Bastard',
 			contact: {
 				email: 'kinginthenorth2019@gmail.com'
 			},
