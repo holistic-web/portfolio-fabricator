@@ -7,31 +7,33 @@
 
 			<p class="Footer__tagLine">If you'd like to send me an email, or, look at my Online media, click the links below.</p>
 
-			<b-button class="Footer__emailButton" href="mailto:kinginthenorth2019@gmail.com" variant="outline-warning">
-				kinginthenorth2019@gmail.com
-			</b-button>
+			<b-button
+				class="Footer__emailButton"
+				variant="outline-warning"
+				:href="`mailto:${context.contact.email}`"
+				v-text="context.contact.email"/>
 
 			<section class="Footer__links">
 				<b-link
-					href="https://github.com/holistic-web"
+					:href="`https://github.com/${context.externalProfiles.github}`"
 					target="_blank"
 					title="Check me out on github!"
 					v-b-tooltip.hover>
 					<img
 						class="Footer__icon"
 						src="../assets/icons/github.svg"
-						alt="github/holisticweb"/>
+						:alt="`github/${context.externalProfiles.github}`"/>
 				</b-link>
 
 				<b-link
-					href="https://linkedin.com/holistic-web"
+					:href="`https://linkedin.com/in/${context.externalProfiles.linkedIn}`"
 					target="_blank"
 					title="Check me out on linkedIn!"
 					v-b-tooltip.hover>
 					<img
 						class="Footer__icon"
 						src="../assets/icons/linkedin.svg"
-						alt="linkedin/holisticweb"/>
+						:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
 				</b-link>
 			</section>
 
@@ -41,8 +43,14 @@
 </template>
 
 <script>
-export default {
+import { mapGetters } from 'vuex';
 
+export default {
+	computed: {
+		...mapGetters({
+			context: 'context'
+		})
+	}
 };
 </script>
 
