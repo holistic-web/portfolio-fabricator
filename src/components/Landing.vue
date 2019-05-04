@@ -1,6 +1,6 @@
 <template>
 	<b-container class="Landing">
-		<kbd class="Landing__title ">Jon Snow</kbd>
+		<kbd class="Landing__title " v-text="`${context.name.first} ${context.name.last}`"/>
 
 		<img
 			class="Landing__image"
@@ -8,12 +8,22 @@
 			alt="code image"/>
 
 		<section class="text-align-left">
-			<p class="Landing__text lead">
-				King in the North and a bastard of Lord Eddard Stark. I ride dragons and kill white walkers and stuff. Don't @ me.
-			</p>
+			<p class="Landing__text lead" v-text="context.aboutMe"/>
 		</section>
 	</b-container>
 </template>
+
+<script>
+import { mapGetters } from 'vuex';
+
+export default {
+	computed: {
+		...mapGetters({
+			context: 'context'
+		})
+	}
+};
+</script>
 
 <style lang="scss">
 @import '../styles/index.scss';

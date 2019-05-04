@@ -13,6 +13,7 @@ export default new Vuex.Store({
 				last: 'Snow'
 			},
 			profession: 'Bastard',
+			aboutMe: 'King in the North and a bastard of Lord Eddard Stark. I ride dragons and kill white walkers and stuff. Don\'t @ me.',
 			contact: {
 				email: 'kinginthenorth2019@gmail.com'
 			},
