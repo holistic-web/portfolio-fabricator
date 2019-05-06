@@ -5,7 +5,7 @@
 
 			<h2 class="Footer__title">Contact</h2>
 
-			<p class="Footer__tagLine">If you'd like to send me an email, or, look at my Online media, click the links below.</p>
+			<p class="Footer__tagLine">If you would like to contact me, or look at my Online profile, please click the links below.</p>
 
 			<b-button
 				class="Footer__emailButton"
@@ -21,7 +21,7 @@
 					v-b-tooltip.hover>
 					<img
 						src="../../../assets/icons/github.svg"
-						class="Footer__icon mr-2"
+						class="Footer__icon mr-1 ml-1"
 						:alt="`github/${context.externalProfiles.github}`"/>
 				</b-link>
 
@@ -31,7 +31,7 @@
 					title="Check me out on linkedIn!"
 					v-b-tooltip.hover>
 					<img
-						class="Footer__icon"
+						class="Footer__icon mr-1 ml-1"
 						src="../../../assets/icons/linkedin.svg"
 						:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
 				</b-link>
