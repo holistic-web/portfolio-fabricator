@@ -73,11 +73,6 @@ export default {
 	background: $grey;
 	z-index: 2;
 	transition: box-shadow 200ms;
-	height: $headerHeight;
-
-	@media all and (min-width: $tablet) {
-		height: $headerHeightDesktop;
-	}
 
 	&--shadow {
 		box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
@@ -85,7 +80,7 @@ export default {
 
 	&__inner {
 		@extend .inner;
-		padding: 1rem 0 0 0;
+		padding: 1rem 0;
 		display: flex;
 	}
 

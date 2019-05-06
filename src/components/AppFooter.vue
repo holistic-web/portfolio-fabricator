@@ -63,11 +63,6 @@ export default {
 	height: 100%;
 	background: $grey;
 	z-index: 2;
-	height: $footerHeight;
-
-	@media all and (min-width: $tablet) {
-		height: $footerHeightDesktop;
-	}
 
 	&__inner {
 		@extend .inner;

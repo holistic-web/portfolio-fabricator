@@ -32,14 +32,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-top: $headerHeight;
-	height: calc(100vh - #{$headerHeight});
-
-	@media all and (min-width: $desktop) {
-		$headerHeightDesktop: 63px;
-		margin-top: $headerHeightDesktop;
-		height: calc(100vh - #{$headerHeightDesktop});
-	}
+	height: 100vh;
 
 	@media all and (max-height: 500px) {
 		height: auto;
