@@ -1,27 +1,29 @@
 <template>
-	<b-container class="Education">
-		<h2>Education</h2>
+	<b-container class="Experience">
+		<h2>Experience</h2>
 
 		<ul>
 			<li
-				v-for="(item, i) in context.education"
+				v-for="(item, i) in context.experience"
 				:key="i"
-				class="Education__item">
+				class="Experience__item">
 
-				<div class="Education__item__row">
-					<h3 v-text="item.institution"/>
+				<div class="Experience__item__row">
+					<h3 v-text="item.company"/>
 					<span v-text="item.date"/>
 				</div>
-				<ul>
-					<li
-						v-for="(qualification, i) in item.qualifications"
-						:key="i"
-						v-text="qualification"/>
-				</ul>
-
+				<p v-text="item.description"/>
+				<section>
+					<h4>Projects</h4>
+					<ul>
+						<li
+							v-for="(project, i) in item.projects"
+							:key="i"
+							v-text="project"/>
+					</ul>
+				</section>
 			</li>
 		</ul>
-
 	</b-container>
 </template>
 
@@ -38,9 +40,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../styles/index.scss";
+@import "../../../styles/index.scss";
 
-.Education {
+.Experience {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
