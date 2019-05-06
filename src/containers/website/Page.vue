@@ -31,3 +31,13 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+@import './../../styles/index.scss';
+
+.Website {
+	color: $text-primary;
+	background: $background-primary;
+}
+
+</style>
