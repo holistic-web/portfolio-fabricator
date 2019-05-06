@@ -1,5 +1,5 @@
 <template>
-	<b-container class="Education">
+	<b-container class="Education mb-5">
 		<h2>Education</h2>
 
 		<ul>

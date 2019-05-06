@@ -16,7 +16,8 @@ export default {
 
 <style lang="scss">
 @import './styles/index.scss';
-
+@import './styles/helper-classes.scss';
+@import './styles/defaults/a.scss';
 #app {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -24,8 +25,8 @@ export default {
 	width: 100%;
 	min-height: 100vh;
 	text-align: center;
-	color: $white;
-	background: $grey;
+	color: $text-primary;
+	background: $background-primary;
 	position: absolute;
 	top: 0;
 }

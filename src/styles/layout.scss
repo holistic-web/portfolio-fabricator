@@ -1,11 +1,6 @@
 $tablet: 768px;
 $desktop: 1024px;
 
-$headerHeight: 50px;
-$headerHeightDesktop: 80px;
-$footerHeight: 100%;
-$footerHeightDesktop: 100%;
-
 .inner {
 	width: 95%;
 	margin-left: 2.5%;
@@ -21,23 +16,5 @@ $footerHeightDesktop: 100%;
 		width: 80%;
 		margin-left: 10%;
 		margin-right: 10%;
-	}
-}
-
-.fullscreen {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: $headerHeight;
-	height: calc(100vh - #{$headerHeight});
-
-	@media all and (min-width: $desktop) {
-		$headerHeightDesktop: 63px;
-		margin-top: $headerHeightDesktop;
-		height: calc(100vh - #{$headerHeightDesktop});
-	}
-
-	@media all and (max-height: 500px) {
-		height: auto;
 	}
 }

@@ -1,0 +1,18 @@
+a {
+	color: $colour-primary;
+	text-decoration: none;
+
+	&:hover {
+		color: $colour-primary;
+		text-decoration-color: $colour-secondary;
+	}
+
+	img {
+		transition: transform 200ms;
+
+		&:hover {
+			transform: rotate(30deg);
+		}
+	}
+}
+

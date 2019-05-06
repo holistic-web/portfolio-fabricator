@@ -20,8 +20,8 @@
 					title="Check me out on github!"
 					v-b-tooltip.hover>
 					<img
-						class="Footer__icon"
 						src="../../../assets/icons/github.svg"
+						class="Footer__icon mr-2"
 						:alt="`github/${context.externalProfiles.github}`"/>
 				</b-link>
 
@@ -63,11 +63,6 @@ export default {
 	height: 100%;
 	background: $grey;
 	z-index: 2;
-	height: $footerHeight;
-
-	@media all and (min-width: $tablet) {
-		height: $footerHeightDesktop;
-	}
 
 	&__inner {
 		@extend .inner;
@@ -96,7 +91,7 @@ export default {
 
 	&__tagLine {
 		font-size: 1.2rem;
-    	padding: 10px;
+		padding: 10px;
 		margin-bottom: 30px;
 		border-bottom: 1px solid $orange;
 	}
