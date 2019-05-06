@@ -40,7 +40,7 @@ export default {
 
 	&__title {
 		font-size: 1.4rem;
-		color: $white;
+		color: $text-primary;
 		width: auto;
 		margin-left: auto;
 		margin-right: auto;

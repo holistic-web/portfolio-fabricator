@@ -44,8 +44,8 @@ export default {
 	width: 100%;
 	min-height: 100vh;
 	text-align: center;
-	color: $white;
-	background: $grey;
+	color: $text-primary;
+	background: $background-primary;
 	position: absolute;
 	top: 0;
 }

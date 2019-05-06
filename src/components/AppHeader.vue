@@ -70,7 +70,7 @@ export default {
 	position: fixed;
 	width: 100%;
 	top: 0;
-	background: $grey;
+	background: $background-primary;
 	z-index: 2;
 	transition: box-shadow 200ms;
 
@@ -98,7 +98,7 @@ export default {
 
 		&--light {
 			font-weight: normal;
-			color: $orange;
+			color: $colour-secondary;
 		}
 
 	}
