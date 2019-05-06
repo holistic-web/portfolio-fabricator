@@ -1,7 +1,7 @@
 <template>
 	<footer class="Footer">
 
-		<div class="Footer__inner">
+		<div class="Footer__inner pt-5 pb-4">
 
 			<h2 class="Footer__title">Contact</h2>
 
@@ -66,7 +66,6 @@ export default {
 
 	&__inner {
 		@extend .inner;
-		padding: 3rem 0 1.5rem 0;
 		display: flex;
 		flex-flow: column;
 	}
