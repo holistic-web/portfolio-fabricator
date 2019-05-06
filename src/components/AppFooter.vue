@@ -20,7 +20,7 @@
 					title="Check me out on github!"
 					v-b-tooltip.hover>
 					<img
-						class="Footer__icon"
+						class="Footer__icon mr-2"
 						src="../assets/icons/github.svg"
 						:alt="`github/${context.externalProfiles.github}`"/>
 				</b-link>
