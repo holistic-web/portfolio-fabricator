@@ -1,6 +1,7 @@
 <template>
-	<b-container class="Experience mb-5">
-		<h2>Experience</h2>
+<div class="Experience">
+	<b-container class="Experience__inner pt-5 pb-5">
+		<h2 class="mb-3">Experience</h2>
 
 		<ul>
 			<li
@@ -24,7 +25,9 @@
 				</section>
 			</li>
 		</ul>
+
 	</b-container>
+</div>
 </template>
 
 <script>
@@ -43,9 +46,13 @@ export default {
 @import "../../../styles/index.scss";
 
 .Experience {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	background-color: $background-secondary;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 
 	&__item {
 		display: flex;

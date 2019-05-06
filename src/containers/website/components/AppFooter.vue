@@ -66,7 +66,7 @@ export default {
 
 	&__inner {
 		@extend .inner;
-		padding: 1rem 0 1.5rem 0;
+		padding: 3rem 0 1.5rem 0;
 		display: flex;
 		flex-flow: column;
 	}
