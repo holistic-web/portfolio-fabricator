@@ -44,6 +44,7 @@ export default {
 
 .Education {
 	background-color: $background-secondary;
+	border-bottom: 3px solid $background-primary;
 
 	&__inner {
 		display: flex;
