@@ -91,7 +91,7 @@ export default {
 
 	&__tagLine {
 		font-size: 1.2rem;
-    	padding: 10px;
+		padding: 10px;
 		margin-bottom: 30px;
 		border-bottom: 1px solid $orange;
 	}
