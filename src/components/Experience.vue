@@ -1,5 +1,5 @@
 <template>
-	<b-container class="Experience">
+	<b-container class="Experience mb-5">
 		<h2>Experience</h2>
 
 		<ul>
