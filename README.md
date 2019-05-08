@@ -16,7 +16,8 @@ The Back end is a firebase project as is currently in development. Please raise 
 
 ## Data schema
 
-`{
+```
+{
     name: {
         first: required string // 'Michael',
         last: required string // 'Fitzhavey'
@@ -53,7 +54,7 @@ The Back end is a firebase project as is currently in development. Please raise 
         linkedIn: optional string: // 'whatevertheurlis',
         stackOverflow: optional string: // 'michaelfitzhavey'
    }
-}`
-
+}
+```
 ## Roadmap
 - generate a pdf CV from the data provided
