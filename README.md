@@ -18,42 +18,64 @@ The Back end is a firebase project as is currently in development. Please raise 
 
 ```
 {
-    name: {
-        first: required string // 'Michael',
-        last: required string // 'Fitzhavey'
-    },
-    profession: required string // 'Developer',
-    profileImage: string // 'https://i.imgur.com/Pm8kKel.jpg',
-    aboutMe: required string // 'Full Stack developer based in London. Specialising in Node.js, Firebase & Vue. I use agile development methods and cutting edge web technonology to deliver rapid results.',
-    contact: {
-        email: required string // 'michael@fitzhavey.com',
-        telephone: optional string // '+123456789'
-    },
-    education: [
-        {
-             institution: required string // 'westminster school',
-             date: required string // '2012-2015'
-             qualifications: [
-                 required string // 'GCSE maths: A'
-             ]
-        }
-    ],
-    experience: [
-        {
-             date: required string // 'March 2015 - Present',
-             company: required string // 'Alphabet inc',
-             role: required string // 'Full Stack Devops Engineer X Power Ranger',
-             description: required string // 'I maintained over 50 websites managing...',
-             projects: [
-                required string // 'I did this thing in javascript for that reason'
-             ]
-        }  
-    ]
-    externalProfiles: {
-        github: optional string: // 'michaelfitzhavey',
-        linkedIn: optional string: // 'whatevertheurlis',
-        stackOverflow: optional string: // 'michaelfitzhavey'
-   }
+	type: "object",
+	fields: {
+		name: {
+			type: "object",
+			fields: {
+				first: {type: "string", required} // 'Michael',
+				last: {type: "string", required} // 'Fitzhavey'
+			}
+		},
+		profession: {type: "string", required} // 'Developer',
+		profileImage: {type: "string", required} // 'https://i.imgur.com/Pm8kKel.jpg',
+		aboutMe: {type: "string", required} // 'Full Stack developer based in London. Specialising in Node.js, Firebase & Vue. I use agile development methods and cutting edge web technonology to deliver rapid results.',
+		contact: {
+			type: "object",
+			fields: {
+				email: {type: "string", required} // 'michael@fitzhavey.com',
+				telephone: {type: "string"} // '+123456789'
+			}
+		},
+		education: [
+			type: "array", 
+			{
+				type: "object",
+				fields: {
+					 institution: {type: "string", required} // 'westminster school',
+					 date: {type: "string", required} // '2012-2015',
+					 qualifications: [
+					 type: "array",
+						{type: "string", required} // 'GCSE maths: A'
+					 ]
+				}
+			}
+		],
+		experience: [
+		type: "array",
+			{
+				type: "object",
+				fields: {
+					date: {type: "string", required} // 'March 2015 - Present',
+					company: {type: "string", required} // 'Alphabet inc',
+					role: {type: "string", required} // 'Full Stack Devops Engineer X Power Ranger',
+					description: {type: "string", required} // 'I maintained over 50 websites managing...',
+					projects: [
+						type: "array",
+						{type: "string", required} // 'I did this thing in javascript for that reason'
+					]
+				}
+			}  
+		],
+		externalProfiles: {
+			type: "object",
+			fields: {
+				github: {type: "string"} // 'michaelfitzhavey',
+				linkedIn: {type: "string"} // 'whatevertheurlis',
+				stackOverflow: {type: "string"} // 'michaelfitzhavey'
+			}
+		}
+	}
 }
 ```
 ## Roadmap
