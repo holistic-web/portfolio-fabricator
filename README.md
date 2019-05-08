@@ -18,65 +18,66 @@ The Back end is a firebase project as is currently in development. Please raise 
 
 ```
 {
-	type: "object",
+	type: 'object',
 	fields: {
 		name: {
-			type: "object",
+			type: 'object',
 			fields: {
-				first: {type: "string", required} // 'Michael',
-				last: {type: "string", required} // 'Fitzhavey'
+				first: { type: 'string', required: 'true' },
+				last: { type: 'string', required: 'true' }
 			}
 		},
-		profession: {type: "string", required} // 'Developer',
-		profileImage: {type: "string", required} // 'https://i.imgur.com/Pm8kKel.jpg',
-		aboutMe: {type: "string", required} // 'Full Stack developer based in London. Specialising in Node.js, Firebase & Vue. I use agile development methods and cutting edge web technonology to deliver rapid results.',
+		profession: { type: 'string', required: 'true' },
+		profileImage: { type: 'string', required: 'true' },
+		aboutMe: { type: 'string', required: 'true' },
 		contact: {
-			type: "object",
+			type: 'object',
 			fields: {
-				email: {type: "string", required} // 'michael@fitzhavey.com',
-				telephone: {type: "string"} // '+123456789'
+				email: { type: 'string', required: 'true' },
+				telephone: { type: 'string' }
 			}
 		},
 		education: [
-			type: "array", 
+			type: 'array', 
 			{
-				type: "object",
+				type: 'object',
 				fields: {
-					 institution: {type: "string", required} // 'westminster school',
-					 date: {type: "string", required} // '2012-2015',
+					 institution: { type: 'string', required: 'true' },
+					 date: { type: 'string', required: 'true' },
 					 qualifications: [
-					 type: "array",
-						{type: "string", required} // 'GCSE maths: A'
+					 type: 'array',
+						{ type: 'string', required: 'true' }
 					 ]
 				}
 			}
 		],
 		experience: [
-		type: "array",
+		type: 'array',
 			{
-				type: "object",
+				type: 'object',
 				fields: {
-					date: {type: "string", required} // 'March 2015 - Present',
-					company: {type: "string", required} // 'Alphabet inc',
-					role: {type: "string", required} // 'Full Stack Devops Engineer X Power Ranger',
-					description: {type: "string", required} // 'I maintained over 50 websites managing...',
+					date: { type: 'string', required: 'true' },
+					company: { type: 'string', required: 'true' },
+					role: { type: 'string', required: 'true' },
+					description: { type: 'string', required: 'true' },
 					projects: [
-						type: "array",
-						{type: "string", required} // 'I did this thing in javascript for that reason'
+						type: 'array',
+						{ type: 'string', required: 'true' }
 					]
 				}
 			}  
 		],
 		externalProfiles: {
-			type: "object",
+			type: 'object',
 			fields: {
-				github: {type: "string"} // 'michaelfitzhavey',
-				linkedIn: {type: "string"} // 'whatevertheurlis',
-				stackOverflow: {type: "string"} // 'michaelfitzhavey'
+				github: { type: 'string' },
+				linkedIn: { type: 'string' },
+				stackOverflow: { type: 'string' }
 			}
 		}
 	}
 }
 ```
+
 ## Roadmap
 - generate a pdf CV from the data provided
