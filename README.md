@@ -14,5 +14,70 @@ The UI is written in Vue.js. The admin section is currently in development and t
 ## Backend
 The Back end is a firebase project as is currently in development. Please raise an issue if you'd like access.
 
+## Data schema
+
+```
+{
+	type: 'object',
+	fields: {
+		name: {
+			type: 'object',
+			fields: {
+				first: { type: 'string', required: 'true' },
+				last: { type: 'string', required: 'true' }
+			}
+		},
+		profession: { type: 'string', required: 'true' },
+		profileImage: { type: 'string', required: 'true' },
+		aboutMe: { type: 'string', required: 'true' },
+		contact: {
+			type: 'object',
+			fields: {
+				email: { type: 'string', required: 'true' },
+				telephone: { type: 'string' }
+			}
+		},
+		education: [
+			type: 'array', 
+			{
+				type: 'object',
+				fields: {
+					 institution: { type: 'string', required: 'true' },
+					 date: { type: 'string', required: 'true' },
+					 qualifications: [
+					 type: 'array',
+						{ type: 'string', required: 'true' }
+					 ]
+				}
+			}
+		],
+		experience: [
+		type: 'array',
+			{
+				type: 'object',
+				fields: {
+					date: { type: 'string', required: 'true' },
+					company: { type: 'string', required: 'true' },
+					role: { type: 'string', required: 'true' },
+					description: { type: 'string', required: 'true' },
+					projects: [
+						type: 'array',
+						{ type: 'string', required: 'true' }
+					]
+				}
+			}  
+		],
+		externalProfiles: {
+			type: 'object',
+			fields: {
+				github: { type: 'string' },
+				linkedIn: { type: 'string' },
+				stackOverflow: { type: 'string' }
+			}
+		}
+	}
+}
+```
+
 ## Roadmap
 - generate a pdf CV from the data provided
