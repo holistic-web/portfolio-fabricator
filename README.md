@@ -1,5 +1,5 @@
 # Portfolio Fabricator
-A tool to generate a website from a JSON portfolio oject.
+This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
 ## Architecture
 - **Fabricated Website**: the project generating a user's website can be found in [/fabricated-website](/fabricated-website)
@@ -9,3 +9,9 @@ A tool to generate a website from a JSON portfolio oject.
 - raise an issue for any new ideas, features, or bug reports
 - to make changes create a pull request and submit it for review
 - be sure to follow the code style guide defined in each project
+
+## Roadmap
+- administrative UI to define portfolio objects
+- have a custom url display the generated website
+- generate a pdf CV from the data provided
+- import / export data from other sources, e.g. linkedIn
