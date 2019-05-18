@@ -8,7 +8,7 @@
 			alt="code image"/>
 
 		<section class="text-align-left">
-			<p class="Landing__text lead" v-text="context.aboutMe"/>
+			<p class="Landing__text" v-text="context.aboutMe"/>
 		</section>
 	</b-container>
 </template>
@@ -34,10 +34,6 @@ export default {
 	justify-content: center;
 	height: 100vh;
 
-	@media all and (max-height: 500px) {
-		height: auto;
-	}
-
 	&__title {
 		font-size: 1.4rem;
 		color: $text-primary;
@@ -47,13 +43,19 @@ export default {
 	}
 
 	&__text {
-		font-size: 1.2rem;
-		text-align: center;
+		font-size: 1rem;
+		text-align: justify;
+
+
+		@media all and (min-width: $tablet) {
+			text-align: center;
+			font-size: 1.2rem;
+		}
 	}
 
 	&__image {
 		width: 60%;
-		margin: 1rem 20%;
+		margin: 2rem 20%;
 
 		@media all and (min-width: $tablet) {
 			width: 50%;
