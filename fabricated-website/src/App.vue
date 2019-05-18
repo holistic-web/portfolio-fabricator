@@ -38,6 +38,8 @@ export default {
 @import './styles/index.scss';
 @import './styles/helper-classes.scss';
 @import './styles/defaults/a.scss';
+@import 'bootstrap/scss/bootstrap.scss';
+
 #app {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;

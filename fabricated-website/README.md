@@ -11,3 +11,6 @@ To get the project up and running:
 3. Run `npm install` to install project dependencies
 4. Run `npm run serve` to host the project locally
 5. If you want to build the project (to deploy it), run `npm run build` and follow the instructions displayed
+
+## Colours
+The colour scheme for the site and the theme setting for Bootstrap components can be found in ['/styles/theme.scss']('/styles/theme.scss').

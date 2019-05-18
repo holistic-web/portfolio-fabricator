@@ -12,16 +12,11 @@
 				<span class="Header__title--light">- {{context.profession}}</span>
 			</b-link>
 
-			<b-link
-				:href="`https://github.com/${context.externalProfiles.github}`"
-				target="_blank"
-				title="Check me out on github!"
-				v-b-tooltip.hover>
-				<img
-					class="Footer__icon"
-					src="../assets/icons/github.svg"
-					:alt="`github/${context.externalProfiles.github}`"/>
-			</b-link>
+			<b-button
+				class="Footer__emailButton"
+				variant="outline-primary"
+				:href="`mailto:${context.contact.email}`"
+				v-text="context.contact.email"/>
 
 		</div>
 
