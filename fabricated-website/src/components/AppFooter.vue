@@ -61,7 +61,7 @@ export default {
 
 .Footer {
 	height: 100%;
-	background: $grey;
+	background: $background-primary;
 	z-index: 2;
 
 	&__inner {

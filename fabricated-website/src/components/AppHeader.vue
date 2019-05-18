@@ -13,10 +13,12 @@
 			</b-link>
 
 			<b-button
-				class="Footer__emailButton"
+				v-if="_get(context, 'contact.email')"
+				class="Header__contactButton"
 				variant="outline-primary"
+				size="lg"
 				:href="`mailto:${context.contact.email}`"
-				v-text="context.contact.email"/>
+				v-text="'Get in touch!'"/>
 
 		</div>
 
@@ -25,6 +27,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { get as _get } from 'lodash';
 
 export default {
 	data() {
@@ -42,6 +45,7 @@ export default {
 		}
 	},
 	methods: {
+		_get,
 		updateScrollDistance() {
 			this.scrollDistance = window.scrollY;
 		}
@@ -75,15 +79,26 @@ export default {
 
 	&__inner {
 		@extend .inner;
-		padding: 1rem 0;
+		padding: 0.5rem 0;
 		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@media all and (min-width: $tablet) {
+			padding: 1rem 0;
+			flex-direction: row;
+			padding: 1rem 0;
+		}
+
 	}
 
 	&__title {
 		font-weight: bold;
 		margin-right: auto;
+		color: $text-primary;
 
 		&:hover {
+			color: $text-primary;
 			text-decoration: none;
 		}
 
@@ -93,19 +108,18 @@ export default {
 
 		&--light {
 			font-weight: normal;
-			color: $colour-secondary;
+			color: $text-secondary;
 		}
 
 	}
 
-	&__icon {
-		width: 32px;
-		margin-top: -4px;
+	&__contactButton {
+		display: none !important;
 
-		@media all and (min-width: $desktop) {
-			width: 48px;
-			margin-top: -7px;
+		@media all and (min-width: $tablet) {
+			display: flex !important;
 		}
+
 	}
 
 }

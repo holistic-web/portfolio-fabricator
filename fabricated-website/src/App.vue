@@ -37,7 +37,6 @@ export default {
 <style lang="scss">
 @import './styles/index.scss';
 @import './styles/helper-classes.scss';
-@import './styles/defaults/a.scss';
 @import 'bootstrap/scss/bootstrap.scss';
 
 #app {
