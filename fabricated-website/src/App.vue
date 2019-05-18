@@ -1,6 +1,8 @@
 <template>
 	<div id="app">
 
+		<vue-headful :title="`${context.name.first} ${context.name.last}`"/>
+
 		<app-header/>
 
 		<landing/>
@@ -16,6 +18,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import VueHeadful from 'vue-headful';
 import AppHeader from './components/AppHeader.vue';
 import Landing from './components/Landing.vue';
 import Education from './components/Education.vue';
@@ -24,11 +28,17 @@ import AppFooter from './components/AppFooter.vue';
 
 export default {
 	components: {
+		VueHeadful,
 		AppHeader,
 		Landing,
 		Education,
 		Experience,
 		AppFooter
+	},
+	computed: {
+		...mapGetters({
+			context: 'context'
+		})
 	}
 };
 
