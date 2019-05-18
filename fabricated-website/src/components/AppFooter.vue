@@ -20,7 +20,7 @@
 					title="Check me out on github!"
 					v-b-tooltip.hover>
 					<img
-						src="../../../assets/icons/github.svg"
+						src="../assets/icons/github.svg"
 						class="Footer__icon mr-1 ml-1"
 						:alt="`github/${context.externalProfiles.github}`"/>
 				</b-link>
@@ -32,7 +32,7 @@
 					v-b-tooltip.hover>
 					<img
 						class="Footer__icon mr-1 ml-1"
-						src="../../../assets/icons/linkedin.svg"
+						src="../assets/icons/linkedin.svg"
 						:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
 				</b-link>
 			</section>
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss">
 
-@import '../../../styles/index.scss';
+@import '../styles/index.scss';
 
 .Footer {
 	height: 100%;

@@ -19,7 +19,7 @@
 				v-b-tooltip.hover>
 				<img
 					class="Footer__icon"
-					src="../../../assets/icons/github.svg"
+					src="../assets/icons/github.svg"
 					:alt="`github/${context.externalProfiles.github}`"/>
 			</b-link>
 
@@ -64,7 +64,7 @@ export default {
 
 <style lang="scss">
 
-@import '../../../styles/index.scss';
+@import '../styles/index.scss';
 
 .Header {
 	position: fixed;

@@ -4,7 +4,7 @@
 
 		<img
 			class="Landing__image"
-			src="../../../assets/images/logo.svg"
+			src="../assets/images/logo.svg"
 			alt="code image"/>
 
 		<section class="text-align-left">
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../styles/index.scss';
+@import '../styles/index.scss';
 
 .Landing {
 	display: flex;
