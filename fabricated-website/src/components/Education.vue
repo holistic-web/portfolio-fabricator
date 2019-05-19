@@ -1,5 +1,5 @@
 <template>
-	<list v-if="listConfig" :config="listConfig"/>
+	<list class="Education" v-if="listConfig" :config="listConfig"/>
 </template>
 
 <script>
@@ -30,3 +30,12 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+
+.Education {
+	padding-top: 2rem;
+	padding-bottom: 1rem;
+}
+
+</style>

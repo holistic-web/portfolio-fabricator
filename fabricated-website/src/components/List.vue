@@ -13,6 +13,7 @@
 						<h4 class="List__item__title" v-text="item.title"/>
 						<span class="List__item__tag" v-text="item.tag"/>
 					</div>
+					<p class="List__item__text" v-text="item.text"/>
 					<ul class="List__subList">
 						<li
 							class="List__subList__item"
@@ -63,7 +64,6 @@ export default {
 .List {
 	background-color: $background-secondary;
 	text-align: left;
-	padding: 2rem 0;
 
 	&__inner {
 		@extend .inner;
@@ -76,6 +76,7 @@ export default {
 		display: flex;
 		flex-direction: column;
 		padding: 0;
+		margin: 0;
 	}
 
 	&__item {
@@ -111,6 +112,10 @@ export default {
 			}
 		}
 
+		&__text {
+			color: $background-primary;
+		}
+
 	}
 
 	&__subList {
@@ -127,6 +132,7 @@ export default {
 
 		&__item {
 			color: $background-primary;
+			margin-left: 1rem;
 
 			@media all and (min-width: $tablet) {
 				margin: 0 2rem;

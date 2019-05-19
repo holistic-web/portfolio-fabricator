@@ -40,7 +40,7 @@ export default new Vuex.Store({
 			],
 			experience: [
 				{
-					company: 'Night\'s Watch',
+					organization: 'Night\'s Watch',
 					date: 'Seasons 3 - 5 (ish)',
 					role: 'Bossman',
 					description: 'I held the wall guarding the realm of men.',
