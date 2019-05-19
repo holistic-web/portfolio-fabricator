@@ -1,7 +1,7 @@
 # Fabricated Website
 This is the static website generated from the portfolio object. It is written using [Vue.js](https://vuejs.org/).
 
-It is a simple single page layout and can be seen at https://actions-codelab-edeb1.firebaseapp.com/.
+It is a simple single page layout and can be seen at https://actions-codelab-edeb1.firebaseapp.com.
 
 ## Routing
 The path after the url is used to calculate which portfolio object to load. If it fails it falls back to the default portfolio object, with id: `QfwSbM08eJAmaW9WgWGU`.
