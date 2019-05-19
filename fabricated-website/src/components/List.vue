@@ -5,7 +5,7 @@
 
 			<ul class="List__list">
 				<li
-					v-for="(item, i) in context.items"
+					v-for="(item, i) in config.items"
 					:key="i"
 					class="List__item">
 
@@ -16,7 +16,7 @@
 					<ul class="List__subList">
 						<li
 							class="List__subList__item"
-							v-for="(subItem, i) in item.subList"
+							v-for="(subItem, i) in item.items"
 							:key="i"
 							v-text="subItem"/>
 					</ul>
@@ -46,7 +46,6 @@
  *     ]
  * }
  */
-import { mapGetters } from 'vuex';
 
 export default {
 	props: {
@@ -54,11 +53,6 @@ export default {
 			type: Object,
 			required: true
 		}
-	},
-	computed: {
-		...mapGetters({
-			context: 'context'
-		})
 	}
 };
 </script>
