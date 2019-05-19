@@ -1,6 +1,6 @@
 # Fabricated Website
 
-![preview](/_meta/assets/website_19-05-19.png)
+![preview](/_meta/assets/website_20-05-19.png)
 
 This is the static website generated from the portfolio object. It is written using [Vue.js](https://vuejs.org/).
 
