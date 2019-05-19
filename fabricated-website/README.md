@@ -25,4 +25,4 @@ To deploy the project:
 3. Run `firebase deploy` to update the live deployment with the generated build
 
 ## Theming
-The colour settings for the site and for Bootstrap components can be found in ['/styles/theme.scss']('/styles/theme.scss').
+The colour settings for the site and for Bootstrap components can be found in [/styles/theme.scss](/fabricated-website/src/styles/theme.scss).
