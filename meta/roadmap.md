@@ -1,0 +1,11 @@
+# Roadmap
+- Administrative UI to create portfolio objects
+- Support entirely custom urls
+- Generate a pdf CV from the portfolio objects
+- Import and export data to / from portfolio objects and third parts (i.e. linkedIn)
+- Allow users to opt in to receiving messages directly through the website
+- Let a user customise the site's appearance further
+	- Let user add text in markdown
+	- Let a custom vue component be rendered in the site
+	- Allow the user to choose the site colours
+- Build some form of job oppurtinities dashboard
