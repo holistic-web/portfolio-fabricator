@@ -1,0 +1,116 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"title": "Portfolio",
+	"type": "object",
+	"required": ["name", "profession", "aboutMe"],
+	"properties": {
+		"name": {
+			"type": "object",
+			"required": ["first", "last"],
+			"properties": {
+				"first": {
+					"type": "string",
+					"description": "First name of the portfolio creator"
+				},
+				"last": {
+					"type": "string",
+					"description": "Last name of the portfolio creator"
+				}
+			}
+		},
+		"profession": {
+			"type": "string",
+			"description": "Proffession to display on the portfolio"
+		},
+		"aboutMe": {
+			"type": "string",
+			"description": "A brief description of the portfolio creator"
+		},
+		"profileImageUrl": {
+			"type": "string",
+			"description": "Web url to access the provided profile image"
+		},
+		"contact": {
+			"type": "object",
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Public email address"
+				},
+				"telephone": {
+					"type": "string",
+					"description": "Public telephone number"
+				}
+			}
+		},
+		"externalProfiles": {
+			"type": "object",
+			"properties": {
+				"github": {
+					"type": "string",
+					"description": "github profile name"
+				},
+				"linkenIn": {
+					"type": "string",
+					"description": "linkenIn profile name"
+				},
+				"stackOverflow": {
+					"type": "string",
+					"description": "Stack Overflow profile name"
+				}
+			}
+		},
+		"education": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["institution", "date"],
+				"properties": {
+					"institution": {
+						"type": "string",
+						"description": "Name of the education establishment"
+					},
+					"date": {
+						"type": "string",
+						"description": "When the institution was attended"
+					},
+					"qualifications": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"description": "Qualification achieved at the instution"
+						}
+					}
+				}
+			}
+		},
+		"experience": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["organization", "date", "description"],
+				"properties": {
+					"organization": {
+						"type": "string",
+						"description": "Name of the organizaton"
+					},
+					"date": {
+						"type": "string",
+						"description": "When work was done with the organization"
+					},
+					"description": {
+						"type": "string",
+						"description": "Brief description of the role"
+					},
+					"projects": {
+						"type": "array",
+						"items": {
+							"type": "string",
+							"description": "Projects worked on at the organization"
+						}
+					}
+				}
+			}
+		}
+	}
+}

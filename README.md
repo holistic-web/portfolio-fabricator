@@ -1,83 +1,21 @@
 # Portfolio Fabricator
 
-This is a project to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources. Along with that it also creates a website and can generate a CV from this information **[IN PROGRESS]**.
+![preview](/readme-assets/homepage_19-05-19.png)
 
-## Project Rules
-- **Branch Protection Rules:** review requests are required to push to `master`
-- **Code Style:** follow the .editorconfig and eslint rules provided, always imitate the code already in the project
-- **Pull Requests:** clearly describe the work that is being done and why it's needed in the PR description
-- **Issues:** after ensuring an issue doesn't already exist, raise one for any discussion point / improvement
+This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
-## UI
-The UI is written in Vue.js. The admin section is currently in development and the site currently displays static data for an example context object.
+## Architecture
+- **Fabricated Website**: generates a user's website and can be found in [/fabricated-website](/fabricated-website)
+- **Portfolio Management**: manages portfolio objects and can be found in [/portfolio-management](/portfolio-management)
 
-## Backend
-The Back end is a firebase project as is currently in development. Please raise an issue if you'd like access.
-
-## Data schema
-
-```
-{
-	type: 'object',
-	fields: {
-		name: {
-			type: 'object',
-			fields: {
-				first: { type: 'string', required: 'true' },
-				last: { type: 'string', required: 'true' }
-			}
-		},
-		profession: { type: 'string', required: 'true' },
-		profileImage: { type: 'string', required: 'true' },
-		aboutMe: { type: 'string', required: 'true' },
-		contact: {
-			type: 'object',
-			fields: {
-				email: { type: 'string', required: 'true' },
-				telephone: { type: 'string' }
-			}
-		},
-		education: [
-			type: 'array', 
-			{
-				type: 'object',
-				fields: {
-					 institution: { type: 'string', required: 'true' },
-					 date: { type: 'string', required: 'true' },
-					 qualifications: [
-					 type: 'array',
-						{ type: 'string', required: 'true' }
-					 ]
-				}
-			}
-		],
-		experience: [
-		type: 'array',
-			{
-				type: 'object',
-				fields: {
-					date: { type: 'string', required: 'true' },
-					company: { type: 'string', required: 'true' },
-					role: { type: 'string', required: 'true' },
-					description: { type: 'string', required: 'true' },
-					projects: [
-						type: 'array',
-						{ type: 'string', required: 'true' }
-					]
-				}
-			}  
-		],
-		externalProfiles: {
-			type: 'object',
-			fields: {
-				github: { type: 'string' },
-				linkedIn: { type: 'string' },
-				stackOverflow: { type: 'string' }
-			}
-		}
-	}
-}
-```
+## Developer Guidelines
+- raise an issue for any new ideas, features, or bug reports
+- to make changes create a pull request and submit it for review
+- be sure to follow the code style guide defined in each project
 
 ## Roadmap
+- administrative UI to define portfolio objects
+- have a custom url display the generated website
 - generate a pdf CV from the data provided
+- import / export data from other sources, e.g. linkedIn
+- allow users to receive messages from their website
