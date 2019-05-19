@@ -24,6 +24,16 @@ export default new Vuex.Store({
 					institution: 'Winterfell',
 					date: 'Seasons 1 - 3 (ish)',
 					qualifications: [
+						'A+ in being a bastard',
+						'A+ in being a bastard',
+						'A+ in being a bastard',
+						'A+ in being a bastard'
+					]
+				},
+				{
+					institution: 'Winterfell',
+					date: 'Seasons 1 - 3 (ish)',
+					qualifications: [
 						'A+ in being a bastard'
 					]
 				}
