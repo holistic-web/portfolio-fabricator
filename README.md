@@ -1,4 +1,7 @@
 # Portfolio Fabricator
+
+![preview](/readme-assets/homepage_19-05-19.png)
+
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
 ## Architecture
