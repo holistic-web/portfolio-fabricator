@@ -1,5 +1,5 @@
 # Fabricated Website
-This section of the project manages the website generated from a portfolio JSON object. It is written using [Vue.js](https://vuejs.org/).
+This is the static website generated from the porfolio object. It is written using [Vue.js](https://vuejs.org/).
 
 It is a simple single page layout and can be seen at https://actions-codelab-edeb1.firebaseapp.com/
 
@@ -14,7 +14,7 @@ To get the project up and running:
 
 
 ## Hosting and Deployment
-This site is hosted on firebase project 'Portfolio Fabricator. Raise an issue to gain access if you don't have it already.
+This site is hosted on firebase project 'Portfolio Fabricator'. Raise an issue to gain access if you don't have it already.
 
 To deploy the project:
 1. Ensure the steps in 'Getting started' all complete succesfully
