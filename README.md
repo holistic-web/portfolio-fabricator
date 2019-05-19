@@ -5,8 +5,8 @@
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
 ## Architecture
-- **Fabricated Website**: the project generating a user's website can be found in [/fabricated-website](/fabricated-website)
-- **Portfolio**: the schema of a portfolio object can be found in [/portfolio.schema.json](/portfolio.schema.json)
+- **Fabricated Website**: generates a user's website and can be found in [/fabricated-website](/fabricated-website)
+- **Portfolio Management**: manages portfolio objects and can be found in [/portfolio-management](/portfolio-management)
 
 ## Developer Guidelines
 - raise an issue for any new ideas, features, or bug reports

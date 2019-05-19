@@ -3,6 +3,9 @@ This is the system to manage the creation of portfolio objects.
 
 This section is in the early stages of development and as such portfolio objects are managed by manually adding them to the database.
 
+## Portfolio
+The schema for a portfolio can be found at in [portfolio.schema.json](/portfolio-management/portfolio.schema.json).
+
 ## Database
 The database is a [Firestore Database](https://firebase.google.com/docs/firestore) and is managed in the [/database](/portfolio-management/database/) folder:
 - access rules are defined in [firestore.rules](/portfolio-management/database/firestore.rules)
