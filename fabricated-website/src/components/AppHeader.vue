@@ -5,12 +5,10 @@
 
 		<div class="Header__inner">
 
-			<b-link
-				class="Header__title"
-				to="/">
+			<span class="Header__title">
 				{{portfolio.name.first}} {{portfolio.name.last}}&nbsp;
 				<span class="Header__title--light">- {{portfolio.profession}}</span>
-			</b-link>
+			</span>
 
 			<b-button
 				v-if="_get(portfolio, 'contact.email')"
