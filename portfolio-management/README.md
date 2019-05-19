@@ -19,7 +19,7 @@ The database is a [Firestore Database](https://firebase.google.com/docs/firestor
 - portfolios are stored in the `/portfolios` collection
 
 ### Deploying Changes
-To deploy changes to the database:
+To deploy changes to the database config:
 1. Ensure [Node.js](https://nodejs.org) is installed on the development machine
 2. Ensure the firebase tools are available on your command line with `npm install --global firebase-tools`
 3. Open a terminal in the `/database` folder
