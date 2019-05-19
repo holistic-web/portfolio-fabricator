@@ -22,7 +22,7 @@ This site is hosted on firebase project 'Portfolio Fabricator'. Raise an issue t
 To deploy the project:
 1. Ensure the steps in 'Getting started' all complete succesfully
 2. Run `npm run build` from this folder to generate the build
-3. Run `firebase deploy` to update the live with the generated build
+3. Run `firebase deploy` to update the live deployment with the generated build
 
 ## Theming
 The colour settings for the site and for Bootstrap components can be found in ['/styles/theme.scss']('/styles/theme.scss').
