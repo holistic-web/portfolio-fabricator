@@ -1,7 +1,7 @@
 # Fabricated Website
 This section of the project manages the website generated from a portfolio JSON object. It is written using [Vue.js](https://vuejs.org/).
 
-This is currently in the initial development stage.
+It is a simple single page layout.
 
 ## Getting Started
 To get the project up and running:
@@ -12,5 +12,5 @@ To get the project up and running:
 4. Run `npm run serve` to host the project locally
 5. If you want to build the project (to deploy it), run `npm run build` and follow the instructions displayed
 
-## Colours
-The colour scheme for the site and the theme setting for Bootstrap components can be found in ['/styles/theme.scss']('/styles/theme.scss').
+## Theming
+The colour settings for the site and for Bootstrap components can be found in ['/styles/theme.scss']('/styles/theme.scss').

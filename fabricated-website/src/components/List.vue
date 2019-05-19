@@ -132,7 +132,7 @@ export default {
 
 		&__item {
 			color: $background-primary;
-			margin-left: 1rem;
+			margin-left: 1.2rem;
 
 			@media all and (min-width: $tablet) {
 				margin: 0 2rem;
