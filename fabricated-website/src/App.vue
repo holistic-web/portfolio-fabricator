@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="app" v-if="portfolio">
 
 		<vue-headful :title="`${portfolio.name.first} ${portfolio.name.last}`"/>
 
@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import VueHeadful from 'vue-headful';
 import AppHeader from './components/AppHeader.vue';
 import Landing from './components/Landing.vue';
@@ -39,6 +39,14 @@ export default {
 		...mapGetters({
 			portfolio: 'portfolio/portfolio'
 		})
+	},
+	methods: {
+		...mapActions({
+			fetchPortfolioById: 'portfolio/fetchPortfolioById'
+		})
+	},
+	created() {
+		this.fetchPortfolioById({ id: 'QfwSbM08eJAmaW9WgWGU' });
 	}
 };
 
