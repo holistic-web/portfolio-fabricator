@@ -38,7 +38,7 @@ export default new Vuex.Store({
 					role: 'Bossman',
 					description: 'I held the wall guarding the realm of men.',
 					projects: [
-						'I went over the wall and killed some undead peeps, I did this using valerian steel',
+						'I went over the wall and killed some undead peeps, I did this using valerian steel.',
 						'I hooked up with a wildling one time. That was jokes.',
 						'I was killed and came back to life showing my persistence and determination.'
 					]
@@ -46,7 +46,7 @@ export default new Vuex.Store({
 				{
 					organization: 'Targaryen Conquest',
 					date: 'Seasons 7 - 8',
-					role: 'King Westoros (low key)',
+					role: 'King of Westoros (low key)',
 					description: 'So it turns out I\'m actually son of Rhaegar Targaryen and Leanna Stark and rightful King.',
 					projects: [
 						'Defeated the army of the undead at Winterfell.',
