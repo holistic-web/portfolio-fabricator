@@ -1,6 +1,6 @@
 # Portfolio Fabricator
 
-![preview](/_meta/assets/homepage_19-05-19.png)
+![preview](/_meta/assets/website_19-05-19.png)
 
 An example of the generated app can be found [here](https://actions-codelab-edeb1.firebaseapp.com/) and an example with a different portfolio object can be found [here](https://actions-codelab-edeb1.firebaseapp.com/Pvx9YlS5fFJtzjmXJkgL).
 

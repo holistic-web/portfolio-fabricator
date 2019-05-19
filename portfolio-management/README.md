@@ -1,4 +1,7 @@
 # Portfolio Management
+
+![preview](/_meta/assets/database_20-05-19.png)
+
 This is the system to manage the creation of portfolio objects.
 
 This section is in the early stages of development and as such portfolio objects are managed by manually adding them to the database.

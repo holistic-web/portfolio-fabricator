@@ -1,4 +1,7 @@
 # Fabricated Website
+
+![preview](/_meta/assets/website_19-05-19.png)
+
 This is the static website generated from the portfolio object. It is written using [Vue.js](https://vuejs.org/).
 
 It is a simple single page layout and can be seen at https://actions-codelab-edeb1.firebaseapp.com/.
