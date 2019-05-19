@@ -24,7 +24,7 @@
 		},
 		"aboutMe": {
 			"type": "string",
-			"description": "A brief description of the porfolio creator"
+			"description": "A brief description of the portfolio creator"
 		},
 		"profileImageUrl": {
 			"type": "string",

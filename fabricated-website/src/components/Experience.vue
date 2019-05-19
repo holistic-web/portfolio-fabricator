@@ -12,15 +12,15 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		}),
 		listConfig() {
-			if (!this.context) return false;
-			if (!this.context.experience) return false;
+			if (!this.portfolio) return false;
+			if (!this.portfolio.experience) return false;
 			const config = {
 				title: 'Experience'
 			};
-			config.items = this.context.experience.map(item => ({
+			config.items = this.portfolio.experience.map(item => ({
 				title: item.organization,
 				tag: item.date,
 				text: item.description,

@@ -1,11 +1,10 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+/* eslint-disable no-param-reassign */
+import { get as _get } from 'lodash';
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default {
+	namespaced: true,
 	state: {
-		context: {
+		portfolio: {
 			name: {
 				first: 'Jon',
 				last: 'Snow'
@@ -57,7 +56,21 @@ export default new Vuex.Store({
 			]
 		}
 	},
+	mutations: {
+		SET_PORTFOLIO(state, response) {
+			state.portfolio = response;
+		}
+	},
+	actions: {
+		async fetchPortfolioById({ commit, rootState }, { id, options }) {
+			const portfolioRef = rootState.db.collection('portfolio').doc(id);
+			const snap = await portfolioRef.get();
+			const portfolio = snap.get();
+			if (!_get(options, 'skipCommit')) commit('SET_PORTFOLIO', portfolio);
+			return portfolio;
+		}
+	},
 	getters: {
-		context: state => state.context
+		portfolio: state => state.portfolio
 	}
-});
+};

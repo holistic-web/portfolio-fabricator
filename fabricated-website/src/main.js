@@ -1,12 +1,7 @@
 import Vue from 'vue';
-
 import BootstrapVue from 'bootstrap-vue';
-// // import './styles/theme.scss';
-// import 'bootstrap/scss/bootstrap.scss';
-// import 'bootstrap-vue/dist/bootstrap-vue.css';
-
 import App from './App.vue';
-import store from './store';
+import store from './store/index';
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);

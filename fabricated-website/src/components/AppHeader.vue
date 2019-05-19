@@ -8,16 +8,16 @@
 			<b-link
 				class="Header__title"
 				to="/">
-				{{context.name.first}} {{context.name.last}}&nbsp;
-				<span class="Header__title--light">- {{context.profession}}</span>
+				{{portfolio.name.first}} {{portfolio.name.last}}&nbsp;
+				<span class="Header__title--light">- {{portfolio.profession}}</span>
 			</b-link>
 
 			<b-button
-				v-if="_get(context, 'contact.email')"
+				v-if="_get(portfolio, 'contact.email')"
 				class="Header__contactButton"
 				variant="outline-primary"
 				size="lg"
-				:href="`mailto:${context.contact.email}`"
+				:href="`mailto:${portfolio.contact.email}`"
 				v-text="'Get in touch!'"/>
 
 		</div>
@@ -37,7 +37,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		}),
 		headerShadowClassName() {
 			if (this.scrollDistance > 10) return 'Header--shadow';

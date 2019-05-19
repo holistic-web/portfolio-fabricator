@@ -15,15 +15,15 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		}),
 		listConfig() {
-			if (!this.context) return false;
-			if (!this.context.education) return false;
+			if (!this.portfolio) return false;
+			if (!this.portfolio.education) return false;
 			const config = {
 				title: 'Education'
 			};
-			config.items = this.context.education.map(item => ({
+			config.items = this.portfolio.education.map(item => ({
 				title: item.institution,
 				tag: item.date,
 				items: item.qualifications

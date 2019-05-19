@@ -1,6 +1,6 @@
 <template>
 	<b-container class="Landing">
-		<kbd class="Landing__title " v-text="`${context.name.first} ${context.name.last}`"/>
+		<kbd class="Landing__title " v-text="`${portfolio.name.first} ${portfolio.name.last}`"/>
 
 		<img
 			class="Landing__image"
@@ -8,7 +8,7 @@
 			alt="code image"/>
 
 		<section class="text-align-left">
-			<p class="Landing__text" v-text="context.aboutMe"/>
+			<p class="Landing__text" v-text="portfolio.aboutMe"/>
 		</section>
 	</b-container>
 </template>
@@ -19,7 +19,7 @@ import { mapGetters } from 'vuex';
 export default {
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		})
 	}
 };

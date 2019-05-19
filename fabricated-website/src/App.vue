@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 
-		<vue-headful :title="`${context.name.first} ${context.name.last}`"/>
+		<vue-headful :title="`${portfolio.name.first} ${portfolio.name.last}`"/>
 
 		<app-header/>
 
@@ -37,7 +37,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		})
 	}
 };

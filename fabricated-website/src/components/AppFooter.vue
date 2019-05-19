@@ -6,47 +6,47 @@
 			<div class="Footer__info">
 
 				<div
-					v-if="context.profileImageUrl"
+					v-if="portfolio.profileImageUrl"
 					class="Footer__image"
-					:style="`background-image: url('${context.profileImageUrl}')`"/>
+					:style="`background-image: url('${portfolio.profileImageUrl}')`"/>
 
 				<div
-					v-if="context.contact"
+					v-if="portfolio.contact"
 					class="Footer__contact">
 
 					<a
-						v-if="_get(context, 'contact.telephone')"
-						:href="`tel:${context.contact.telephone}`"
-						v-text="context.contact.telephone"/>
+						v-if="_get(portfolio, 'contact.telephone')"
+						:href="`tel:${portfolio.contact.telephone}`"
+						v-text="portfolio.contact.telephone"/>
 
 					<a
-						v-if="_get(context, 'contact.email')"
-						:href="`mailto:${context.contact.email}`"
-						v-text="context.contact.email"/>
+						v-if="_get(portfolio, 'contact.email')"
+						:href="`mailto:${portfolio.contact.email}`"
+						v-text="portfolio.contact.email"/>
 
 					<div class="Footer__links">
 						<b-link
-							v-if="_get(context, 'externalProfiles.github')"
-							:href="`https://github.com/${context.externalProfiles.github}`"
+							v-if="_get(portfolio, 'externalProfiles.github')"
+							:href="`https://github.com/${portfolio.externalProfiles.github}`"
 							target="_blank"
 							title="Check me out on github!"
 							v-b-tooltip.hover>
 							<img
 								src="../assets/icons/github.svg"
 								class="Footer__icon mr-1 ml-1"
-								:alt="`github/${context.externalProfiles.github}`"/>
+								:alt="`github/${portfolio.externalProfiles.github}`"/>
 						</b-link>
 
 						<b-link
-							v-if="_get(context, 'externalProfiles.linkedIn')"
-							:href="`https://linkedin.com/in/${context.externalProfiles.linkedIn}`"
+							v-if="_get(portfolio, 'externalProfiles.linkedIn')"
+							:href="`https://linkedin.com/in/${portfolio.externalProfiles.linkedIn}`"
 							target="_blank"
 							title="Check me out on linkedIn!"
 							v-b-tooltip.hover>
 							<img
 								class="Footer__icon mr-1 ml-1"
 								src="../assets/icons/linkedin.svg"
-								:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
+								:alt="`linkedin/${portfolio.externalProfiles.linkedIn}`"/>
 						</b-link>
 					</div>
 
@@ -66,7 +66,7 @@ import { get as _get } from 'lodash';
 export default {
 	computed: {
 		...mapGetters({
-			context: 'context'
+			portfolio: 'portfolio/portfolio'
 		})
 	},
 	methods: {
