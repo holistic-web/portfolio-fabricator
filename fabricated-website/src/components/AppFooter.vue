@@ -1,41 +1,58 @@
 <template>
 	<footer class="Footer">
 
-		<div class="Footer__inner pt-5 pb-4">
+		<div class="Footer__inner">
 
-			<h2 class="Footer__title">Contact</h2>
+			<div class="Footer__info">
 
-			<p class="Footer__tagLine">If you would like to contact me, or look at my Online profile, please click the links below.</p>
+				<div
+					v-if="context.profileImageUrl"
+					class="Footer__image"
+					:style="`background-image: url('${context.profileImageUrl}')`"/>
 
-			<b-button
-				class="Footer__emailButton"
-				variant="outline-warning"
-				:href="`mailto:${context.contact.email}`"
-				v-text="context.contact.email"/>
+				<div
+					v-if="context.contact"
+					class="Footer__contact">
 
-			<section class="Footer__links">
-				<b-link
-					:href="`https://github.com/${context.externalProfiles.github}`"
-					target="_blank"
-					title="Check me out on github!"
-					v-b-tooltip.hover>
-					<img
-						src="../assets/icons/github.svg"
-						class="Footer__icon mr-1 ml-1"
-						:alt="`github/${context.externalProfiles.github}`"/>
-				</b-link>
+					<a
+						v-if="_get(context, 'contact.telephone')"
+						:href="`tel:${context.contact.telephone}`"
+						v-text="context.contact.telephone"/>
 
-				<b-link
-					:href="`https://linkedin.com/in/${context.externalProfiles.linkedIn}`"
-					target="_blank"
-					title="Check me out on linkedIn!"
-					v-b-tooltip.hover>
-					<img
-						class="Footer__icon mr-1 ml-1"
-						src="../assets/icons/linkedin.svg"
-						:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
-				</b-link>
-			</section>
+					<a
+						v-if="_get(context, 'contact.email')"
+						:href="`mailto:${context.contact.email}`"
+						v-text="context.contact.email"/>
+
+					<div class="Footer__links">
+						<b-link
+							v-if="_get(context, 'externalProfiles.github')"
+							:href="`https://github.com/${context.externalProfiles.github}`"
+							target="_blank"
+							title="Check me out on github!"
+							v-b-tooltip.hover>
+							<img
+								src="../assets/icons/github.svg"
+								class="Footer__icon mr-1 ml-1"
+								:alt="`github/${context.externalProfiles.github}`"/>
+						</b-link>
+
+						<b-link
+							v-if="_get(context, 'externalProfiles.linkedIn')"
+							:href="`https://linkedin.com/in/${context.externalProfiles.linkedIn}`"
+							target="_blank"
+							title="Check me out on linkedIn!"
+							v-b-tooltip.hover>
+							<img
+								class="Footer__icon mr-1 ml-1"
+								src="../assets/icons/linkedin.svg"
+								:alt="`linkedin/${context.externalProfiles.linkedIn}`"/>
+						</b-link>
+					</div>
+
+				</div>
+			</div>
+
 
 		</div>
 
@@ -44,12 +61,16 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { get as _get } from 'lodash';
 
 export default {
 	computed: {
 		...mapGetters({
 			context: 'context'
 		})
+	},
+	methods: {
+		_get
 	}
 };
 </script>
@@ -61,43 +82,48 @@ export default {
 
 .Footer {
 	height: 100%;
+	padding: 2rem 0;
 	background: $background-primary;
 	z-index: 2;
 
 	&__inner {
 		@extend .inner;
 		display: flex;
-		flex-flow: column;
+		flex-direction: column;
 	}
 
-	&__title {
-		font-weight: bold;
+	&__info {
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 2rem;
+		justify-content: space-between;
+	}
 
-		&:hover {
-			text-decoration: none;
-		}
+	&__image {
+		min-width: 50%;
+		height: 10rem;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		border-radius: 0.5rem;
 
 		@media all and (min-width: $tablet) {
-			font-size: 1.5rem;
+			width: 15rem;
+			min-width: unset;
 		}
-
-		&--light {
-			font-weight: normal;
-			color: $orange;
-		}
-
 	}
 
-	&__tagLine {
-		font-size: 1.2rem;
-		padding: 10px;
-		margin-bottom: 30px;
-		border-bottom: 1px solid $orange;
+	&__contact {
+		text-align: right;
+		padding-left: 1rem;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: flex;
+		flex-direction: column;
 	}
 
-	&__emailButton {
-		margin: 0 auto;
-		margin-bottom: 30px;
+	&__links {
+		margin-top: 1rem;
 	}
 
 	&__icon {

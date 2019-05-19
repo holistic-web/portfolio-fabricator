@@ -1,5 +1,8 @@
 <template>
-	<list class="Education" v-if="listConfig" :config="listConfig"/>
+	<section class="Education">
+		<list v-if="listConfig" :config="listConfig"/>
+		<div class="Education__border"/>
+	</section>
 </template>
 
 <script>
@@ -35,8 +38,11 @@ export default {
 @import "../styles/index.scss";
 
 .Education {
-	padding-top: 2rem;
-	border-bottom: 1px solid $background-primary;
+
+	&__border {
+		@extend .inner;
+		border-bottom: 1px solid $background-primary;
+	}
 }
 
 </style>

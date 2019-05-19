@@ -15,3 +15,4 @@ This is a tool to allow users to store their personal information (i.e. educatio
 - have a custom url display the generated website
 - generate a pdf CV from the data provided
 - import / export data from other sources, e.g. linkedIn
+- allow users to receive messages from their website

@@ -63,6 +63,7 @@ export default {
 
 .List {
 	background-color: $background-secondary;
+	padding-top: 3rem;
 	text-align: left;
 
 	&__inner {
@@ -138,6 +139,7 @@ export default {
 		&__item {
 			color: $background-primary;
 			margin-left: 1.2rem;
+			margin-bottom: 0.5rem;
 
 			@media all and (min-width: $tablet) {
 				margin: 0 2rem;
