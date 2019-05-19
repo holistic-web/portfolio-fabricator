@@ -1,7 +1,7 @@
 <template>
 	<div class="List">
 		<section class="List__inner">
-			<h2 class="mb-3" v-text="config.title"/>
+			<h2 class="List__title" v-text="config.title"/>
 
 			<ul class="List__list">
 				<li
@@ -70,6 +70,11 @@ export default {
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+		color: $text-secondary;
 	}
 
 	&__list {

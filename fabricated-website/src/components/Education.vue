@@ -32,10 +32,11 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../styles/index.scss";
 
 .Education {
 	padding-top: 2rem;
-	padding-bottom: 1rem;
+	border-bottom: 1px solid $background-primary;
 }
 
 </style>

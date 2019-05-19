@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 
 .Experience {
-	padding-top: 1rem;
+	padding-top: 2rem;
 	padding-bottom: 2rem;
 }
 
