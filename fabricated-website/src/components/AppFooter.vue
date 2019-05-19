@@ -1,5 +1,5 @@
 <template>
-	<footer class="Footer">
+	<footer v-if="showFooter" class="Footer">
 
 		<div class="Footer__inner">
 
@@ -67,7 +67,15 @@ export default {
 	computed: {
 		...mapGetters({
 			portfolio: 'portfolio/portfolio'
-		})
+		}),
+		showFooter() {
+			if (
+				!this.portfolio.externalProfiles
+				&& !this.portfolio.profileImageUrl
+				&& !this.portfolio.contact
+			) return false;
+			return true;
+		}
 	},
 	methods: {
 		_get
