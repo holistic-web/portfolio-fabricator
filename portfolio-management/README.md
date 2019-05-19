@@ -6,6 +6,12 @@ This section is in the early stages of development and as such portfolio objects
 ## Portfolios
 The schema for a portfolio can be found at in [portfolio.schema.json](/portfolio-management/portfolio.schema.json).
 
+### Adding a Portfolio
+To add a portfolio:
+1. Navigate to the 'portfolios' collection in the firestore database
+2. Add a new portfolio object following the scheme [here](/portfolio-management/portfolio.schema.json)
+3. Copy the id provided by that new document and load the web app at `/:id` to see your page
+
 ## Database
 The database is a [Firestore Database](https://firebase.google.com/docs/firestore) and is managed in the [/database](/portfolio-management/database/) folder:
 - access rules are defined in [firestore.rules](/portfolio-management/database/firestore.rules)

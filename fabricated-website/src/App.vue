@@ -45,8 +45,13 @@ export default {
 			fetchPortfolioById: 'portfolio/fetchPortfolioById'
 		})
 	},
-	created() {
-		this.fetchPortfolioById({ id: 'QfwSbM08eJAmaW9WgWGU' });
+	async created() {
+		const id = window.location.pathname.substring(1);
+		try {
+			await this.fetchPortfolioById({ id });
+		} catch (err) {
+			this.fetchPortfolioById({ id: 'QfwSbM08eJAmaW9WgWGU' });
+		}
 	}
 };
 
