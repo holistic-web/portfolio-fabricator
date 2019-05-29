@@ -45,7 +45,7 @@
 		></b-form-input>
 
 		<b-form-input
-			v-model="password"
+			v-model="confirmPassword"
 			type="password"
 			required
 			:state="!confirmPasswordFeedback && !!confirmPassword"
@@ -131,7 +131,6 @@ export default {
 					lastName: this.lastName
 				});
 				this.$router.push('/');
-				this.close();
 			} catch (err) {
 				this.errorText = err.message;
 			}
