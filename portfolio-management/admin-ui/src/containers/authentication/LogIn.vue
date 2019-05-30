@@ -2,7 +2,7 @@
 	<div class="LoginAccount">
 		<h1>Log in to your Account</h1>
 
-		<b-form @submit="login" class="LoginAccount__form">
+		<b-form @submit.prevent="login" class="LoginAccount__form">
 
 			<b-form-group label="Enter your Email Address">
 				<b-form-input
