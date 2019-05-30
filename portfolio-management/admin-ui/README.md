@@ -1,29 +1,24 @@
 # admin-ui
 
-## Project setup
-```
-npm install
-```
+This is the admin UI that allows you to sign-up/login and add data about yourself to generate the site for the `fabricated-website` section of this project. It is written using [Vue.js](https://vuejs.org/).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Routing
+The path after the url is used to calculate which portfolio object to load. If it fails it falls back to the default portfolio object, with id: `QfwSbM08eJAmaW9WgWGU`.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Getting Started
+To get the project up and running:
 
-### Run your tests
-```
-npm run test
-```
+1. Ensure [Node.js](https://nodejs.org) is installed on the development machine
+2. Open a terminal and change directory to this folder (`/portfolio-management/admin-ui/`)
+3. Run `npm install` to install project dependencies
+4. Run `npm run serve` to host the project locally
+5. If you want to build the project (to deploy it), run `npm run build` and follow the instructions displayed
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Hosting and Deployment
+This site is hosted on firebase project 'Portfolio Fabricator'. Raise an issue to gain access if you don't have it already.
+
+To deploy the project:
+1. Ensure the steps in 'Getting started' all complete succesfully
+2. Run `npm run build` from this folder to generate the build
+3. Run `firebase deploy` to update the live deployment with the generated build
