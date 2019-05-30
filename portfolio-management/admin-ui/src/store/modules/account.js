@@ -15,7 +15,6 @@ export default {
 	},
 	actions: {
 		async signUp({ commit, dispatch, rootState }, { username, password }) {
-			console.log('rootState: ', rootState);
 			const authData = await rootState.firebase.auth().createUserWithEmailAndPassword(username, password);
 			commit('SET_AUTHENTICATION', authData);
 			dispatch('logIn', { username, password });
