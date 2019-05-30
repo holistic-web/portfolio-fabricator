@@ -1,149 +1,98 @@
 <template>
-	<b-form @submit="createAccount" class="CreateAccount" @reset="clearData">
+	<div class="CreateAccount">
+		<h1 class="CreateAccount__title">Sign up for an Account</h1>
 
-		<b-form-select
-			label="Title"
-			v-model="title"
-			required
-			:options="titleOptions"
-		></b-form-select>
+		<b-form @submit.prevent="onSubmit" class="CreateAccount__form" @reset="clearData">
 
-		<b-form-input
-			v-model.trim="firstName"
-			type="text"
-			required
-			placeholder="First Name"
-		></b-form-input>
+			<b-form-group label="Enter your Email Address">
+				<b-form-input
+					v-model.trim="newUser.email"
+					type="email"
+					required
+					placeholder="Email Address"/>
+			</b-form-group>
 
-		<b-form-input
-			v-model.trim="lastName"
-			type="text"
-			required
-			placeholder="Last Name"
-		></b-form-input>
+			<b-form-group label="Enter your Password">
+				<b-form-input
+					v-model="newUser.password"
+					type="password"
+					required
+					placeholder="Password"/>
+			</b-form-group>
 
-		<b-form-input
-			id="input-1"
-			v-model.trim="occupation"
-			type="text"
-			required
-			placeholder="Occupation"
-		></b-form-input>
+			<b-form-group label="Confirm your Password">
+				<b-form-input
+					v-model="newUser.confirmPassword"
+					type="password"
+					required
+					:state="!confirmPasswordFeedback && !!newUser.confirmPassword"
+					placeholder="Confirm Password"/>
+			</b-form-group>
 
-		<b-form-input
-			v-model.trim="email"
-			type="email"
-			required
-			placeholder="Email Address"
-		></b-form-input>
+			<span class="text-danger" v-text="confirmPasswordFeedback"/>
 
-		<b-form-input
-			v-model="password"
-			type="password"
-			required
-			placeholder="Password"
-		></b-form-input>
+			<p class="text-danger" v-text="errorText"/>
 
-		<b-form-input
-			v-model="confirmPassword"
-			type="password"
-			required
-			:state="!confirmPasswordFeedback && !!confirmPassword"
-			placeholder="Confirm Password"
-		></b-form-input>
+			<b-button
+				type="submit"
+				:disabled="!isFormValid"
+				variant="primary">
+				Create Account
+			</b-button>
 
-		<span class="text-danger" v-text="confirmPasswordFeedback"/>
+			<b-button
+				type="reset"
+				variant="danger">
+				Reset
+			</b-button>
 
-		<p class="text-danger" v-text="errorText"/>
-
-		<b-button
-			type="submit"
-			:disabled="!isFormValid"
-			variant="primary">
-			Create Account
-		</b-button>
-
-		<b-button
-			type="reset"
-			variant="danger">
-			Reset
-		</b-button>
-
-	</b-form>
+		</b-form>
+	</div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 
 export default {
-	props: {
-		visible: {
-			type: Boolean
-		}
-	},
 	data() {
 		return {
-			titleOptions: [
-				'Dr', 'Mr', 'Ms', 'Mrs'
-			],
-			title: null,
-			firstName: null,
-			lastName: null,
-			occupation: null,
-			email: null,
-			password: null,
-			confirmPassword: null,
+			newUser: {},
 			errorText: null
 		};
 	},
 	computed: {
 		isFormValid() {
 			return (
-				this.email &&
-				this.title &&
-				this.firstName &&
-				this.lastName &&
-				this.occupation &&
-				this.password &&
-				this.password === this.confirmPassword
+				this.newUser.email
+				&& this.newUser.password
+				&& (this.newUser.password === this.newUser.confirmPassword)
 			);
 		},
 		confirmPasswordFeedback() {
 			if (
-				!this.confirmPassword ||
-				this.password === this.confirmPassword
+				!this.newUser.confirmPassword
+				|| (this.newUser.password === this.newUser.confirmPassword)
 			) return null;
 			return 'Passwords must match.';
 		}
 	},
 	methods: {
 		...mapActions({
-			postNewAccount: 'account/signUp'
+			signUpUser: 'account/signUp'
 		}),
-		async createAccount() {
+		async onSubmit() {
 			try {
-				await this.postNewAccount({
-					username: this.email,
-					password: this.password,
-					title: this.title,
-					occupation: this.occupation,
-					firstName: this.firstName,
-					lastName: this.lastName
+				await this.signUpUser({
+					username: this.newUser.email,
+					password: this.newUser.password
 				});
-				this.$router.push('/');
-			} catch (err) {
-				this.errorText = err.message;
+ 			} catch (e) {
+				console.error(e);
+				this.errorText = e.message;
 			}
-
 		},
 		clearData() {
-			this.title = null;
-			this.firstName = null;
-			this.lastName = null;
-			this.occupation = null;
-			this.email = null;
-			this.password = null;
-			this.confirmPassword = null;
+			this.newUser = {};
 			this.errorText = null;
 		}
 	}
