@@ -1,9 +1,6 @@
 # admin-ui
 
-This is the admin UI that allows you to sign-up/login and add data about yourself to generate the site for the `fabricated-website` section of this project. It is written using [Vue.js](https://vuejs.org/).
-
-## Routing
-The path after the url is used to calculate which portfolio object to load. If it fails it falls back to the default portfolio object, with id: `QfwSbM08eJAmaW9WgWGU`.
+This is the admin UI that allows a user to build a portfolio object to generate the site for the `[/fabricated-website]([/fabricated-website)` section of this project. It is written using [Vue.js](https://vuejs.org/)
 
 ## Getting Started
 To get the project up and running:
@@ -16,6 +13,8 @@ To get the project up and running:
 
 
 ## Hosting and Deployment
+This is in early development and has not been initially deployed. 
+
 This site is hosted on firebase project 'Portfolio Fabricator'. Raise an issue to gain access if you don't have it already.
 
 To deploy the project:
