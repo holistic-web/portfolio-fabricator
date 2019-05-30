@@ -44,11 +44,11 @@ export default {
 		return {
 			user: { },
 			errorText: null
-		}
+		};
 	},
 
 	methods: {
-		...mapActions ({
+		...mapActions({
 			loginAccount: 'account/logIn'
 		}),
 		async login() {
@@ -57,12 +57,11 @@ export default {
 					username: this.user.email,
 					password: this.user.password
 				});
-				this.errorText = "success!";
+				this.errorText = 'success!';
 			} catch (err) {
 				this.errorText = err.message;
 			}
-
-		},
+		}
 	}
 };
 </script>
