@@ -11,7 +11,7 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-	const isAuthenticated = !!store.state.authentication;
+	const isAuthenticated = !!store.getters['account/authentication'];
 	if (to.name.startsWith('authentication.')) {
 		if (isAuthenticated) return next('/');
 		return next();

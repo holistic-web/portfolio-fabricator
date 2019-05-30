@@ -31,8 +31,9 @@ export default {
 				username || state.credentials.username,
 				password || state.credentials.password
 			);
-			if (username && password) commit('SET_CREDENTIALS', { username, password });
-			commit('SET_AUTHENTICATION', authData);
+			if (username && password) await commit('SET_CREDENTIALS', { username, password });
+			await commit('SET_AUTHENTICATION', authData);
+			window.location.reload();
 			return authData;
 		},
 		async logOut({ commit, rootState }) {
