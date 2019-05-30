@@ -11,11 +11,13 @@ const router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
-	if (store.state.authentication || to.name.startsWith('authentication.')) {
-		next(); // allow to enter route
-	} else {
-		next({ name: 'authentication.logIn' }); // go to '/log-in';
+	const isAuthenticated = !!store.state.authentication;
+	if (to.name.startsWith('authentication.')) {
+		if (isAuthenticated) return next('/');
+		return next();
 	}
+	if (!isAuthenticated) return next({ name: 'authentication.logIn' });
+	return next();
 });
 
 export default router;
