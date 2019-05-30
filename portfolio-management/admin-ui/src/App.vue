@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-    </div>
-    <router-view/>
+
+	  <sign-up />
+
   </div>
 </template>
 
+<script>
+
+import SignUp from './components/SignUp.vue';
+
+export default {
+	components: {
+		SignUp
+	}
+};
+
+</script>
+
 <style lang="scss">
+@import 'bootstrap/scss/bootstrap.scss';
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
