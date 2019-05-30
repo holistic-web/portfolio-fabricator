@@ -1,6 +1,6 @@
 <template>
 	<div class="CreateAccount">
-		<h1 class="CreateAccount__title">Sign up for an Account</h1>
+		<h1>Sign up for an Account</h1>
 
 		<b-form @submit.prevent="onSubmit" class="CreateAccount__form" @reset="clearData">
 
@@ -98,3 +98,11 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+
+.CreateAccount {
+	padding: 1rem;
+}
+
+</style>
