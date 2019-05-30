@@ -1,10 +1,10 @@
-import Signup from './SignUp.vue';
+import SignUp from './SignUp.vue';
 
 const routes = [
 	{
 		name: 'authentication.signUp',
 		path: '/sign-up',
-		component: Signup
+		component: SignUp
 	}
 ];
 
