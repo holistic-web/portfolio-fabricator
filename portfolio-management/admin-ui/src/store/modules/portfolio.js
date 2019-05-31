@@ -22,6 +22,13 @@ export default {
 			const portfolio = portfolioDoc.data();
 			commit('SET_PORTFOLIO', portfolio);
 			return portfolio;
+		},
+		async updatePortfolio({ dispatch, rootState }, portfolioUpdate) {
+			const userId = rootState.account.authentication.user.uid;
+			const portfolioRef = rootState.db.collection('portfolios').doc(userId);
+			const updateResult = await portfolioRef.update(portfolioUpdate);
+			await dispatch('fetchPortfolio');
+			return updateResult;
 		}
 	},
 	getters: {
