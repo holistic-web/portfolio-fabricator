@@ -1,7 +1,15 @@
 <template>
-	<section class="PortfolioDetail" v-if="portfolio">
+	<section class="PortfolioDetail">
 
-		<code v-text="JSON.stringify(portfolio, null, 4)"/>
+		<b-button
+			v-text="'Edit'"
+			:to="{ name: 'portfolio.edit' }"/>
+
+		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
+
+		<template v-else>
+			<code v-text="JSON.stringify(portfolio, null, 4)"/>
+		</template>
 
 	</section>
 </template>
