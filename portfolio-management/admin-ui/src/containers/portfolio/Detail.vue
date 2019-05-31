@@ -28,7 +28,8 @@ export default {
 			try {
 				await this.fetchPortfolio();
 			} catch (e) {
-				this.errorText = e.message;
+				this.errorText = e;
+				console.error(e);
 			}
 		}
 	},
