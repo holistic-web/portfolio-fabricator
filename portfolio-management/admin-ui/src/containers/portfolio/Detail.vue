@@ -30,13 +30,10 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			fetchPortfolio: 'portfolio/fetchPortfolio',
-			// testing
-			updatePortfolio: 'portfolio/updatePortfolio'
+			fetchPortfolio: 'portfolio/fetchPortfolio'
 		})
 	},
-	async created() {
-		await this.updatePortfolio({ test: 'test ' });
+	created() {
 		this.fetchPortfolio();
 	}
 };
