@@ -6,7 +6,7 @@ service cloud.firestore {
 			allow write: if false;
 		}
 
-		match /users/{key} {
+		match /portfolios/{key} {
 			allow read: if request.auth.uid == key;
 			allow write: if request.auth.uid == key;
 		}
