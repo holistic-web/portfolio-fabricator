@@ -3,8 +3,8 @@ import Vuex from 'vuex';
 import firebase from 'firebase';
 import VuexPersistence from 'vuex-persist';
 import config from '../config';
-
 import accountStore from './modules/account';
+import portfolioStore from './modules/portfolio';
 
 Vue.use(Vuex);
 
@@ -24,7 +24,8 @@ const storeConfig = {
 		firebase
 	},
 	modules: {
-		account: accountStore
+		account: accountStore,
+		portfolio: portfolioStore
 	},
 	plugins: [
 		persistedState.plugin
