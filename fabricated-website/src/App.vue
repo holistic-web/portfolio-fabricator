@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import VueHeadful from 'vue-headful';
 import AppHeader from './components/AppHeader.vue';
 import Landing from './components/Landing.vue';
@@ -35,10 +35,10 @@ export default {
 		Experience,
 		AppFooter
 	},
-	computed: {
-		...mapGetters({
-			portfolio: 'portfolio/portfolio'
-		})
+	data() {
+		return {
+			portfolio: null
+		};
 	},
 	methods: {
 		...mapActions({
@@ -47,11 +47,7 @@ export default {
 	},
 	async created() {
 		const id = window.location.pathname.substring(1);
-		try {
-			await this.fetchPortfolioById({ id });
-		} catch (err) {
-			this.fetchPortfolioById({ id: 'QfwSbM08eJAmaW9WgWGU' });
-		}
+		this.portfolio = await this.fetchPortfolioById({ id });
 	}
 };
 
