@@ -3,7 +3,6 @@ import Vuex from 'vuex';
 import firebase from 'firebase';
 import VuexPersistence from 'vuex-persist';
 import config from '../config';
-// import persistedState from './lib/persistedState';
 
 import accountStore from './modules/account';
 
