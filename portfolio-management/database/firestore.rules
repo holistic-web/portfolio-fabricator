@@ -2,12 +2,11 @@ service cloud.firestore {
 	match /databases/{database}/documents {
 
 		match /{document=**} {
-			allow read: if false;
+			allow read: if true;
 			allow write: if false;
 		}
 
 		match /portfolios/{key} {
-			allow read: if request.auth.uid == key;
 			allow write: if request.auth.uid == key;
 		}
 	}
