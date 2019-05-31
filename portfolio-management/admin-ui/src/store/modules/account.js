@@ -41,6 +41,7 @@ export default {
 			commit('SET_AUTHENTICATION', null);
 			commit('SET_CREDENTIALS', null);
 			localStorage.clear();
+			window.location.reload();
 			return success;
 		}
 	},

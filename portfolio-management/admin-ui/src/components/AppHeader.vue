@@ -3,9 +3,8 @@
 
 		<b-button
 			variant="outline-primary"
-			size="lg"
-			@click="logOutUser"
-			v-text="`Log out`"/>
+			v-text="`Log out`"
+			@click="logOutUser"/>
 
 	</header>
 </template>
