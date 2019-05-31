@@ -1,6 +1,7 @@
 <template>
 	<section class="PortfolioDetail" v-if="portfolio">
 		<span class="error" v-text="errorText"/>
+		{{errorText}}
 		{{portfolio}}
 	</section>
 </template>
@@ -22,15 +23,17 @@ export default {
 	methods: {
 		...mapActions({
 			fetchPortfolio: 'portfolio/fetchPortfolio'
-		})
-	},
-	created() { 
-s;
-		try {
-			this.fetchPortfolio();
-		} catch (e) {
-			this.errorText = e.message;
+		}),
+		async preparePage() {
+			try {
+				await this.fetchPortfolio();
+			} catch (e) {
+				this.errorText = e.message;
+			}
 		}
+	},
+	created() {
+		this.preparePage();
 	}
 };
 </script>
