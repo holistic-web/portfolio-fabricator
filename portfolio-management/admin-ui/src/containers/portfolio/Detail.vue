@@ -24,11 +24,12 @@ export default {
 			fetchPortfolio: 'portfolio/fetchPortfolio'
 		})
 	},
-	created() {
+	created() { 
+s;
 		try {
 			this.fetchPortfolio();
 		} catch (e) {
-			this.errorText = e;
+			this.errorText = e.message;
 		}
 	}
 };
