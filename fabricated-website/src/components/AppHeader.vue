@@ -9,25 +9,7 @@
 				{{portfolio.name.first}} {{portfolio.name.last}}&nbsp;
 				<span class="Header__title--light">- {{portfolio.profession}}</span>
 			</span>
-
-			<b-button
-				v-b-modal.modal-1
-				v-if="_get(portfolio, 'contact.email')"
-				class="Header__contactButton"
-				variant="outline-primary"
-				size="lg"
-				v-text="'Get in touch!'"
-				/>
-
-			<b-modal id="modal-1" title="EmailModal">
-				<p class="my-4">Send mail below!</p>
-				<b-button
-					variant="warning"
-					size="lg"
-					v-on:click="sendMail"
-					v-text="'CLICK ME'"
-					 />
-			</b-modal>
+			<email-modal />
 
 		</div>
 
@@ -37,8 +19,12 @@
 <script>
 import { mapGetters } from 'vuex';
 import { get as _get } from 'lodash';
+import EmailModal from './EmailModal.vue';
 
 export default {
+	components: {
+		EmailModal
+	},
 	data() {
 		return {
 			scrollDistance: null
