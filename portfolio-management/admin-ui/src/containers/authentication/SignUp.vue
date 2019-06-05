@@ -2,7 +2,7 @@
 	<div class="CreateAccount">
 		<h1>Sign up for an Account</h1>
 
-		<b-form @submit.prevent="onSubmit" class="CreateAccount__form" @reset="clearData">
+		<b-form class="CreateAccount__form">
 
 			<b-form-group label="Enter your Email Address">
 				<b-form-input
@@ -34,13 +34,14 @@
 			<p class="text-danger" v-text="errorText"/>
 
 			<b-button
-				type="submit"
+				@click="onSubmit"
 				:disabled="!isFormValid"
 				variant="primary">
 				Create Account
 			</b-button>
 
 			<b-button
+				@click="clearData"
 				type="reset"
 				variant="danger">
 				Reset

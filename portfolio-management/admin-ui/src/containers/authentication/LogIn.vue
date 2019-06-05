@@ -2,7 +2,7 @@
 	<div class="LoginAccount">
 		<h1>Log in to your Account</h1>
 
-		<b-form @submit.prevent="login" class="LoginAccount__form">
+		<b-form class="LoginAccount__form">
 
 			<b-form-group label="Enter your Email Address">
 				<b-form-input
@@ -21,16 +21,17 @@
 			</b-form-group>
 
 			<b-button
+				@click="login"
 				type="submit"
 				variant="primary">
 				Log In
 			</b-button>
 
-			<b-button
-				type="link"
-				variant="secondary">
+			<router-link
+				to="/sign-up"
+				tag="button">
 				Create Account
-			</b-button>
+			</router-link>
 
 		</b-form>
 	</div>
