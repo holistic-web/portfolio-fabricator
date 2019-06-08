@@ -1,31 +1,23 @@
 <template>
-	<div class="EmailModal">
+	<b-modal
+		:visible="visible"
+		title="ContactModal"
+		@hidden="$emit('hidden')">
+		<p class="my-4">Send mail below!</p>
 		<b-button
-				v-b-modal.modal-1
-				class="Header__contactButton"
-				variant="outline-primary"
-				size="lg"
-				v-text="'Get in touch!'"
-				/>
-
-			<b-modal id="modal-1" title="EmailModal">
-				<p class="my-4">Send mail below!</p>
-				<b-button
-					variant="warning"
-					size="lg"
-					v-text="'CLICK ME'"
-						/>
-			</b-modal>
-	</div>
+			variant="warning"
+			size="lg"
+			v-text="'CLICK ME'"/>
+	</b-modal>
 </template>
 
-
-<style lang="scss">
-@import "../styles/index.scss";
-
-.EmailModal {
-
-
-}
-
-</style>
+<script>
+export default {
+	props: {
+		visible: {
+			type: Boolean,
+			required: true
+		}
+	}
+};
+</script>

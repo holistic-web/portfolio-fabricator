@@ -2,8 +2,11 @@
 	<div id="app" v-if="portfolio">
 
 		<vue-headful :title="`${portfolio.name.first} ${portfolio.name.last}`"/>
+		<contact-modal
+			:visible="isModalVisible"
+			@hidden="onModalClose" />
 
-		<app-header/>
+		<app-header @showModal="showModal"/>
 
 		<landing/>
 
@@ -13,27 +16,34 @@
 
 		<app-footer/>
 
-
 	</div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import VueHeadful from 'vue-headful';
+import ContactModal from './components/ContactModal.vue';
 import AppHeader from './components/AppHeader.vue';
 import Landing from './components/Landing.vue';
 import Education from './components/Education.vue';
 import Experience from './components/Experience.vue';
 import AppFooter from './components/AppFooter.vue';
 
+
 export default {
 	components: {
 		VueHeadful,
+		ContactModal,
 		AppHeader,
 		Landing,
 		Education,
 		Experience,
 		AppFooter
+	},
+	data() {
+		return {
+			isModalVisible: false
+		};
 	},
 	computed: {
 		...mapGetters({
@@ -43,7 +53,13 @@ export default {
 	methods: {
 		...mapActions({
 			fetchPortfolioById: 'portfolio/fetchPortfolioById'
-		})
+		}),
+		showModal() {
+			this.isModalVisible = true;
+		},
+		onModalClose() {
+			this.isModalVisible = false;
+		}
 	},
 	async created() {
 		const id = window.location.pathname.substring(1);
