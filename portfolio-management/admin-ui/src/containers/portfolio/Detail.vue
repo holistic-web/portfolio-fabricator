@@ -1,9 +1,11 @@
 <template>
 	<section class="PortfolioDetail">
 
-		<b-button
-			v-text="'Edit'"
-			:to="{ name: 'portfolio.edit' }"/>
+		<h1>Portfolio</h1>
+
+		<router-link :to="{ name: 'portfolio.edit' }">
+			<b-button v-text="'Edit'"/>
+		</router-link>
 
 		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
 
@@ -38,3 +40,13 @@ export default {
 	}
 };
 </script>
+
+<style lang="scss">
+
+.PortfolioDetail {
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+}
+
+</style>

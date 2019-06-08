@@ -1,6 +1,11 @@
 <template>
 	<section class="PortfolioEdit">
-		<h1>Edit</h1>
+
+		<h1>Edit Portfolio</h1>
+
+		<router-link :to="{ name: 'portfolio.detail' }">
+			<b-button v-text="'detail'"/>
+		</router-link>
 
 		<schema-form v-if="portfolio" :schema="schema" v-model="formData"/>
 
@@ -52,7 +57,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 .PortfolioEdit {
 	padding: 1rem;
+	display: flex;
+	flex-direction: column;
 }
+
 </style>
