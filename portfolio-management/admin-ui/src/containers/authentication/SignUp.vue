@@ -46,6 +46,13 @@
 				variant="danger">
 				Reset
 			</b-button>
+			<router-link
+				:to="{ name: 'authentication.logIn' }">
+				<b-button
+					type="submit">
+					Existing User?
+				</b-button>
+			</router-link>
 
 		</b-form>
 	</div>

@@ -22,15 +22,16 @@
 
 			<b-button
 				@click="login"
-				type="submit"
-				variant="primary">
+				type="submit">
 				Log In
 			</b-button>
 
 			<router-link
-				to="/sign-up"
-				tag="button">
-				Create Account
+				:to="{ name: 'authentication.signUp' }">
+				<b-button
+					type="submit">
+					Create Account
+				</b-button>
 			</router-link>
 
 		</b-form>
