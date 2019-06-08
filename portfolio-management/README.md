@@ -12,6 +12,9 @@ They can be managed here: [https://portfolio-administration.web.app](https://por
 ## Admin UI
 To see more about the administrative interface see the [admin-ui](/portfolio-management/admin-ui) folder.
 
+## Cloud Functions
+We use cloud functions to trigger actions on certain events. These can be found in the [cloud-functions](/portfolio-management/cloud-functions) folder.
+
 ## Database
 The database is a [Firestore Database](https://firebase.google.com/docs/firestore) and is managed in the [/database](/portfolio-management/database/) folder:
 - access rules are defined in [firestore.rules](/portfolio-management/database/firestore.rules)
