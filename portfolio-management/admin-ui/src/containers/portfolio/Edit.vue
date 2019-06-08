@@ -1,30 +1,25 @@
 <template>
 	<section class="PortfolioEdit">
 
-		<h1>Edit Portfolio</h1>
+		<h1>Portfolio</h1>
 
 		<router-link :to="{ name: 'portfolio.detail' }">
-			<b-button v-text="'detail'"/>
+			<b-btn variant="info" v-text="'detail'"/>
 		</router-link>
 
-		<schema-form v-if="portfolio" :schema="schema" v-model="formData"/>
+		<schema-form v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
 
-		<b-button v-text="'Update'" @click="onUpdateClick"/>
 	</section>
 </template>
 
 <script>
-import { SchemaForm } from 'vue-json-schema-form';
 import { mapActions, mapGetters } from 'vuex';
-import jsonSchema from '../../../../portfolio.schema.json';
+import portfolioSchema from '../../../../portfolio.schema.json';
 
 export default {
-	components: {
-		SchemaForm
-	},
 	data() {
 		return {
-			schema: jsonSchema,
+			portfolioSchema,
 			formData: {}
 		};
 	},
@@ -38,8 +33,13 @@ export default {
 			fetchPortfolio: 'portfolio/fetchPortfolio',
 			updatePortfolio: 'portfolio/updatePortfolio'
 		}),
-		async onUpdateClick() {
+		async onSubmitClick() {
 			await this.updatePortfolio(this.formData);
+			this.$toasted.show('Portfolio Updated', {
+				position: 'bottom-right',
+				duration: '3000'
+			});
+			console.log('done');
 		}
 	},
 	watch: {

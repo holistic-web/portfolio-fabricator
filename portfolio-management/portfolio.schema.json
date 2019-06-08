@@ -10,75 +10,78 @@
 			"properties": {
 				"first": {
 					"type": "string",
-					"description": "First name of the portfolio creator"
+					"title": "First name of the portfolio creator"
 				},
 				"last": {
 					"type": "string",
-					"description": "Last name of the portfolio creator"
+					"title": "Last name of the portfolio creator"
 				}
 			}
 		},
 		"profession": {
 			"type": "string",
-			"description": "Proffession to display on the portfolio"
+			"title": "Proffession to display on the portfolio"
 		},
 		"aboutMe": {
 			"type": "string",
-			"description": "A brief description of the portfolio creator"
+			"title": "A brief description of the portfolio creator"
 		},
 		"profileImageUrl": {
 			"type": "string",
-			"description": "Web url to access the provided profile image"
+			"title": "Web url to access the provided profile image"
 		},
 		"contact": {
 			"type": "object",
+			"title": "Contact",
 			"properties": {
 				"email": {
 					"type": "string",
-					"description": "Public email address"
+					"title": "Public email address"
 				},
 				"telephone": {
 					"type": "string",
-					"description": "Public telephone number"
+					"title": "Public telephone number"
 				}
 			}
 		},
 		"externalProfiles": {
 			"type": "object",
+			"title": "External Profiles",
 			"properties": {
 				"github": {
 					"type": "string",
-					"description": "github profile name"
+					"title": "github profile name"
 				},
 				"linkenIn": {
 					"type": "string",
-					"description": "linkenIn profile name"
+					"title": "linkenIn profile name"
 				},
 				"stackOverflow": {
 					"type": "string",
-					"description": "Stack Overflow profile name"
+					"title": "Stack Overflow profile name"
 				}
 			}
 		},
 		"education": {
 			"type": "array",
+			"title": "Education",
 			"items": {
 				"type": "object",
 				"required": ["institution", "date"],
 				"properties": {
 					"institution": {
 						"type": "string",
-						"description": "Name of the education establishment"
+						"title": "Name of the education establishment"
 					},
 					"date": {
 						"type": "string",
-						"description": "When the institution was attended"
+						"title": "When the institution was attended"
 					},
 					"qualifications": {
 						"type": "array",
 						"items": {
 							"type": "string",
-							"description": "Qualification achieved at the instution"
+							"title": "Qualification achieved at the instution"
 						}
 					}
 				}
@@ -86,27 +89,28 @@
 		},
 		"experience": {
 			"type": "array",
+			"title": "Experience",
 			"items": {
 				"type": "object",
 				"required": ["organization", "date", "description"],
 				"properties": {
 					"organization": {
 						"type": "string",
-						"description": "Name of the organizaton"
+						"title": "Name of the organizaton"
 					},
 					"date": {
 						"type": "string",
-						"description": "When work was done with the organization"
+						"title": "When work was done with the organization"
 					},
-					"description": {
+					"title": {
 						"type": "string",
-						"description": "Brief description of the role"
+						"title": "Brief description of the role"
 					},
 					"projects": {
 						"type": "array",
 						"items": {
 							"type": "string",
-							"description": "Projects worked on at the organization"
+							"title": "Projects worked on at the organization"
 						}
 					}
 				}

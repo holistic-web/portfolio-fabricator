@@ -10,7 +10,7 @@
 		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
 
 		<template v-else>
-			<code v-text="JSON.stringify(portfolio, null, 4)"/>
+			<pre class="PortfolioDetail__detail"> {{ JSON.stringify(portfolio, null, 4) }} </pre>
 		</template>
 
 	</section>
@@ -18,10 +18,21 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { SchemaForm } from 'vue-json-schema-form';
+import portfolioSchema from '../../../../portfolio.schema.json';
 
 export default {
+	components: {
+		SchemaForm
+	},
 	data() {
 		return {
+			portfolioSchema,
+			formOptions: {
+				validateAfterLoad: true,
+				validateAfterChanged: true,
+				validateAsync: true
+			},
 			errorText: null
 		};
 	},
@@ -47,6 +58,10 @@ export default {
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
+
+	&__detail {
+		text-align: left;
+	}
 }
 
 </style>
