@@ -20,18 +20,18 @@
 					placeholder="Password"/>
 			</b-form-group>
 
-			<b-button
-				@click="login"
-				type="submit">
-				Log In
-			</b-button>
+			<b-btn
+				class="LoginAccount__button"
+				variant="info"
+				v-text="'Log In'"
+				@click="login"/>
 
 			<router-link
 				:to="{ name: 'authentication.signUp' }">
-				<b-button
-					type="submit">
-					Create Account
-				</b-button>
+				<b-btn
+					class="LoginAccount__button"
+					variant="primary"
+					v-text="'Create Account'"/>
 			</router-link>
 
 		</b-form>
@@ -72,6 +72,10 @@ export default {
 
 .LoginAccount {
 	padding: 1rem;
+
+	&__button {
+		margin: 1rem;
+	}
 }
 
 </style>

@@ -33,25 +33,26 @@
 
 			<p class="text-danger" v-text="errorText"/>
 
-			<b-button
-				@click="onSubmit"
+			<b-btn
+				class="CreateAccount__button"
 				:disabled="!isFormValid"
-				variant="primary">
-				Create Account
-			</b-button>
+				variant="primary"
+				v-text="'Create Account'"
+				@click="onSubmit"/>
 
-			<b-button
-				@click="clearData"
+			<b-btn
+				class="CreateAccount__button"
 				type="reset"
-				variant="danger">
-				Reset
-			</b-button>
+				variant="warning"
+				v-text="'Reset'"
+				@click="clearData"/>
 			<router-link
 				:to="{ name: 'authentication.logIn' }">
-				<b-button
-					type="submit">
-					Existing User?
-				</b-button>
+				<b-btn
+					class="CreateAccount__button"
+					type="submit"
+					variant="info"
+					v-text="'Existing User?'"/>
 			</router-link>
 
 		</b-form>
@@ -111,6 +112,10 @@ export default {
 
 .CreateAccount {
 	padding: 1rem;
+
+	&__button {
+		margin: 1rem;
+	}
 }
 
 </style>
