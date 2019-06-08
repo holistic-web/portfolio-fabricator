@@ -4,7 +4,7 @@
 		<h1>Portfolio</h1>
 
 		<router-link :to="{ name: 'portfolio.edit' }">
-			<b-button v-text="'Edit'"/>
+			<b-btn v-text="'Edit'" variant="info"/>
 		</router-link>
 
 		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
