@@ -1,8 +1,10 @@
 # Portfolio Fabricator
 
-![preview](/_meta/assets/website_19-05-19.png)
+![preview](/_meta/assets/website-and-admin_08_06_19.png)
 
 An example of the generated app can be found [here](https://actions-codelab-edeb1.firebaseapp.com/) and an example with a different portfolio object can be found [here](https://actions-codelab-edeb1.firebaseapp.com/Pvx9YlS5fFJtzjmXJkgL).
+
+Portfolios can be managed at: [https://portfolio-administration.web.app](https://portfolio-administration.web.app)
 
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 

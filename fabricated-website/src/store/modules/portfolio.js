@@ -1,5 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { get as _get } from 'lodash';
+import portfolioFallback from '../../lib/portfolioFallback.json';
+
 
 export default {
 	namespaced: true,
@@ -13,10 +15,18 @@ export default {
 	},
 	actions: {
 		async fetchPortfolioById({ commit, rootState }, { id, options }) {
-			const portfolioRef = rootState.db.collection('portfolios').doc(id);
-			const portfolioDoc = await portfolioRef.get();
-			if (!portfolioDoc.exists) throw new Error('portfolio does not exist');
-			const portfolio = portfolioDoc.data();
+			let portfolio;
+			try {
+				const portfolioRef = rootState.db.collection('portfolios').doc(id);
+				const portfolioDoc = await portfolioRef.get();
+				if (portfolioDoc.exists) {
+					portfolio = portfolioDoc.data();
+				} else {
+					throw new Error('portfolio does not exist');
+				}
+			} catch (e) {
+				portfolio = portfolioFallback;
+			}
 			if (!_get(options, 'skipCommit')) commit('SET_PORTFOLIO', portfolio);
 			return portfolio;
 		}
