@@ -7,6 +7,8 @@
 			<b-btn v-text="'Edit'" variant="info"/>
 		</router-link>
 
+		<p>Your website can be viewed at <a :href="websiteUrl" v-text="websiteUrl" target="_blank"/></p>
+
 		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
 
 		<template v-else>
@@ -18,28 +20,22 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import { SchemaForm } from 'vue-json-schema-form';
-import portfolioSchema from '../../../../portfolio.schema.json';
 
 export default {
-	components: {
-		SchemaForm
-	},
 	data() {
 		return {
-			portfolioSchema,
-			formOptions: {
-				validateAfterLoad: true,
-				validateAfterChanged: true,
-				validateAsync: true
-			},
 			errorText: null
 		};
 	},
 	computed: {
 		...mapGetters({
-			portfolio: 'portfolio/portfolio'
-		})
+			portfolio: 'portfolio/portfolio',
+			authentication: 'account/authentication'
+		}),
+		websiteUrl() {
+			const { uid } = this.authentication.user;
+			return `https://actions-codelab-edeb1.firebaseapp.com/${uid}`;
+		}
 	},
 	methods: {
 		...mapActions({
