@@ -1,5 +1,4 @@
 # Roadmap
-- Administrative UI to create portfolio objects
 - Support entirely custom urls
 - Generate a pdf CV from the portfolio objects
 - Import and export data to / from portfolio objects and third parts (i.e. linkedIn)
