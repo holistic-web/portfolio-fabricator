@@ -10,7 +10,7 @@ module.exports = {
 		"linebreak-style": 0,
 		indent: ["error", "tab"],
 		"no-tabs": 0,
-		"max-len": [1, 160],
+		"max-len": [1, 140],
 		"comma-dangle": [2, "never"]
 	},
 	parserOptions: {

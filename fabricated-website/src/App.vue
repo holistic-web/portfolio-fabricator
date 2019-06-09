@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import VueHeadful from 'vue-headful';
 import ContactModal from './components/ContactModal.vue';
 import AppHeader from './components/AppHeader.vue';
@@ -63,11 +63,7 @@ export default {
 	},
 	async created() {
 		const id = window.location.pathname.substring(1);
-		try {
-			await this.fetchPortfolioById({ id });
-		} catch (err) {
-			this.fetchPortfolioById({ id: 'QfwSbM08eJAmaW9WgWGU' });
-		}
+		this.portfolio = await this.fetchPortfolioById({ id });
 	}
 };
 
