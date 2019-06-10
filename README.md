@@ -2,10 +2,15 @@
 
 ![preview](/_meta/assets/website-and-admin_08_06_19.png)
 
-An example of the generated app can be found [here](https://actions-codelab-edeb1.firebaseapp.com/) and an example with a different portfolio object can be found [here](https://actions-codelab-edeb1.firebaseapp.com/Pvx9YlS5fFJtzjmXJkgL).
+## Relevant Links
+- https://console.firebase.google.com/u/0/project/actions-codelab-edeb1/overview
+    _firebase console_
+- https://actions-codelab-edeb1.firebaseapp.com/
+    _fabricated website
+- https://portfolio-administration.web.app/log-in
+    _portfolio admin_
 
-Portfolios can be managed at: [https://portfolio-administration.web.app](https://portfolio-administration.web.app)
-
+## Overview
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
 The project roadmap defining neat future feature ideas can be found in [roadmap.md](/_meta/roadmap.md).
