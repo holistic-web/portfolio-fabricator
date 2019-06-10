@@ -50,7 +50,7 @@
 			"properties": {
 				"github": {
 					"type": "string",
-					"title": "Github profile name"
+					"title": "GitHub profile name"
 				},
 				"linkenIn": {
 					"type": "string",
