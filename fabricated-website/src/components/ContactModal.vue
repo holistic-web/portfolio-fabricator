@@ -11,33 +11,29 @@
 			label="Your Details"
 			label-size="lg"
 			label-class="font-weight-bold pt-0"
-			class="mb-0"
-			>
+			class="mb-0">
 				<b-form-group
 					label-cols-sm="3"
 					label="Name"
 					label-align-sm="right"
-					label-for="nested-name"
-				>
-					<b-form-input id="nested-name"></b-form-input>
+					label-for="nested-name">
+					<b-form-input id="nested-name"/>
 				</b-form-group>
 
 				<b-form-group
 					label-cols-sm="3"
 					label="Email"
 					label-align-sm="right"
-					label-for="nested-email"
-				>
-					<b-form-input id="nested-email"></b-form-input>
+					label-for="nested-email">
+					<b-form-input id="nested-email"/>
 				</b-form-group>
 
 				<b-form-group
 					label-cols-sm="3"
 					label="Message"
 					label-align-sm="right"
-					label-for="nested-message"
-				>
-					<b-form-input id="nested-message" size="lg"></b-form-input>
+					label-for="nested-message">
+					<b-form-input id="nested-message" size="lg"/>
 				</b-form-group>
 			</b-form-group>
 		</b-card>
