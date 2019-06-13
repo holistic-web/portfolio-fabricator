@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import VueHeadful from 'vue-headful';
 import ContactModal from './components/ContactModal.vue';
 import AppHeader from './components/AppHeader.vue';
