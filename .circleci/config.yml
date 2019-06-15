@@ -2,7 +2,7 @@ version: 2
 jobs:
 
   # Test all parts of the project are ok
-  test_portoflio_fabricator:
+  test:
     docker:
 
       - image: circleci/node:8
@@ -39,4 +39,4 @@ workflows:
   version: 2
   build_and_publish:
     jobs:
-      - checkout_and_test
+      - test
