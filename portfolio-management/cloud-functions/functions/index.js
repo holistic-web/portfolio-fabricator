@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const nodemailer = require('nodemailer');
 
 admin.initializeApp(functions.config().firebase);
 
@@ -7,6 +8,7 @@ admin.initializeApp(functions.config().firebase);
 // https://firebase.google.com/docs/functions/write-firebase-functions
 
 exports.createPortfolioOnNewAccount = functions.auth.user().onCreate(async (user) => {
+	console.log('> createPortfolioOnNewAccount called with: ' + JSON.stringify(user, null, 4));
 	const uid = user.uid;
 	const email = user.email;
 	const portfolioCollection = admin.firestore().collection('portfolios');
