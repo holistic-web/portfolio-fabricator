@@ -11,12 +11,11 @@
 			</span>
 
 			<b-button
-				v-if="_get(portfolio, 'contact.email')"
 				class="Header__contactButton"
 				variant="outline-primary"
 				size="lg"
-				:href="`mailto:${portfolio.contact.email}`"
-				v-text="'Get in touch!'"/>
+				v-text="'Get in touch!'"
+				@click="$emit('showModal')"/>
 
 		</div>
 

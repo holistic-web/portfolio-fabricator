@@ -2,8 +2,11 @@
 	<div id="app" v-if="portfolio">
 
 		<vue-headful :title="`${portfolio.name.first} ${portfolio.name.last}`"/>
+		<contact-modal
+			:visible="isModalVisible"
+			@hidden="onModalClose" />
 
-		<app-header/>
+		<app-header @showModal="showModal"/>
 
 		<landing/>
 
@@ -13,22 +16,24 @@
 
 		<app-footer/>
 
-
 	</div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import VueHeadful from 'vue-headful';
+import ContactModal from './components/ContactModal.vue';
 import AppHeader from './components/AppHeader.vue';
 import Landing from './components/Landing.vue';
 import Education from './components/Education.vue';
 import Experience from './components/Experience.vue';
 import AppFooter from './components/AppFooter.vue';
 
+
 export default {
 	components: {
 		VueHeadful,
+		ContactModal,
 		AppHeader,
 		Landing,
 		Education,
@@ -37,17 +42,28 @@ export default {
 	},
 	data() {
 		return {
-			portfolio: null
+			isModalVisible: false
 		};
+	},
+	computed: {
+		...mapGetters({
+			portfolio: 'portfolio/portfolio'
+		})
 	},
 	methods: {
 		...mapActions({
 			fetchPortfolioById: 'portfolio/fetchPortfolioById'
-		})
+		}),
+		showModal() {
+			this.isModalVisible = true;
+		},
+		onModalClose() {
+			this.isModalVisible = false;
+		}
 	},
 	async created() {
 		const id = window.location.pathname.substring(1);
-		this.portfolio = await this.fetchPortfolioById({ id });
+		await this.fetchPortfolioById({ id });
 	}
 };
 
