@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const nodemailer = require('nodemailer');
 
 admin.initializeApp(functions.config().firebase);
 
@@ -21,6 +22,23 @@ exports.createPortfolioOnNewAccount = functions.auth.user().onCreate(async (user
 exports.sendEmail = functions.https.onCall(async (emailData, context) => {
 	console.log('> sendEmail called with: ' + JSON.stringify(emailData, null, 4));
 	const { message, name, senderEmail, receiptEmail } = emailData;
+	const email = functions.config().email;
 
+	const mailTransport = nodemailer.createTransport({
+		service: 'gmail',
+		auth: {
+		  user: email.address,
+		  pass: email.password
+		}
+	});
+
+	const mailOptions = {
+		from: senderEmail,
+		to: receiptEmail,
+		subject: `Email on your portoflio website from ${name}`,
+		text: message
+	};
+
+	await mailTransport.sendMail(mailOptions);
 	return 'success'
 });
