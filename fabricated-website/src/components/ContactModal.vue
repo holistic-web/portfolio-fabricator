@@ -90,6 +90,9 @@ export default {
 					position: 'top-right',
 					duration: '3000'
 				});
+				this.name = null;
+				this.senderEmail = null;
+				this.message = null;
 				this.$emit('hidden');
 			} catch (err) {
 				this.$toasted.show(err, {
