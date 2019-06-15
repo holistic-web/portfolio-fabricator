@@ -6,7 +6,7 @@
 		ok-title="Send"
 		:ok-disabled="isSubmitDisabled"
 		@hidden="$emit('hidden')"
-		@submit="onSubmit">
+		@ok="onSubmit">
 
 		<p v-text="'Send me a message by filling out the form below!'"/>
 
@@ -67,7 +67,7 @@ export default {
 		isSubmitDisabled() {
 			return (
 				this.name === null
-				|| this.sendEmail === null
+				|| this.senderEmail === null
 				|| this.message === null
 				|| this.page.submitting
 			);

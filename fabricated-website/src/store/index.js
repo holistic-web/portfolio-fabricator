@@ -9,10 +9,12 @@ Vue.use(Vuex);
 
 const app = firebase.initializeApp(config.firebase);
 const db = app.firestore();
+const functions = firebase.functions();
 
 const storeConfig = {
 	state: {
-		db
+		db,
+		functions
 	},
 	modules: {
 		portfolio: portfolioStore,

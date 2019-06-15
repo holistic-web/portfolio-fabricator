@@ -11,7 +11,8 @@ module.exports = {
 		indent: ["error", "tab"],
 		"no-tabs": 0,
 		"max-len": [1, 160],
-		"comma-dangle": [2, "never"]
+		"comma-dangle": [2, "never"],
+		'object-curly-newline': 0
 	},
 	parserOptions: {
 		parser: "babel-eslint"

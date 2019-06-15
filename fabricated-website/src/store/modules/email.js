@@ -3,9 +3,11 @@
 export default {
 	namespaced: true,
 	actions: {
-		async sendEmail({ rootState }, { message, name, senderEmail }) {
-			const sendEmail = rootState.firebase.functions().httpsCallable('sendEmail');
-			const result = await sendEmail({ message, name, senderEmail });
+		async sendEmail({ rootState, rootGetters }, { message, name, senderEmail }) {
+			console.log('rootState: ', rootState);
+			const sendEmail = rootState.functions.httpsCallable('sendEmail');
+			const receiptEmail = rootGetters['portfolio/portfolio'].email;
+			const result = await sendEmail({ message, name, senderEmail, receiptEmail });
 			return result;
 		}
 	}
