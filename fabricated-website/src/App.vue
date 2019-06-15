@@ -63,7 +63,7 @@ export default {
 	},
 	async created() {
 		const id = window.location.pathname.substring(1);
-		this.portfolio = await this.fetchPortfolioById({ id });
+		await this.fetchPortfolioById({ id });
 	}
 };
 

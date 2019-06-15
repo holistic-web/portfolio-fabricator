@@ -4,7 +4,9 @@
 		:visible="visible"
 		title="ContactModal"
 		ok-title="Send"
-		@hidden="$emit('hidden')">
+		:ok-disabled="isSubmitDisabled"
+		@hidden="$emit('hidden')"
+		@submit="onSubmit">
 
 		<p v-text="'Send me a message by filling out the form below!'"/>
 
@@ -14,21 +16,28 @@
 			label="Name"
 			label-align-sm="right"
 			label-for="ContactModal__name">
-			<b-form-input id="ContactModal__name"/>
+			<b-form-input
+				id="ContactModal__name"
+				v-model="name"/>
 		</b-form-group>
 
 		<b-form-group
 			label="Email"
 			label-align-sm="right"
 			label-for="ContactModal__email">
-			<b-form-input id="ContactModal__email"/>
+			<b-form-input
+				id="ContactModal__email"
+				v-model="senderEmail"/>
 		</b-form-group>
 
 		<b-form-group
 			label="Message"
 			label-align-sm="right"
 			label-for="ContactModal__message">
-			<b-form-input id="ContactModal__message" size="lg"/>
+			<b-form-input
+				id="ContactModal__message"
+				size="lg"
+				v-model="message"/>
 		</b-form-group>
 
 	</b-modal>
@@ -44,10 +53,41 @@ export default {
 			required: true
 		}
 	},
+	data() {
+		return {
+			page: {
+				submitting: false
+			},
+			name: null,
+			senderEmail: null,
+			message: null
+		};
+	},
+	computed: {
+		isSubmitDisabled() {
+			return (
+				this.name === null
+				|| this.sendEmail === null
+				|| this.message === null
+				|| this.page.submitting
+			);
+		}
+	},
 	methods: {
 		...mapActions({
 			sendEmail: 'email/sendEmail'
-		})
+		}),
+		async onSubmit(e) {
+			e.preventDefault();
+			this.page.submitting = true;
+			await this.sendEmail({
+				name: this.name,
+				senderEmail: this.senderEmail,
+				message: this.message
+			});
+			this.page.submitting = false;
+			this.$emit('hidden');
+		}
 	}
 };
 </script>
