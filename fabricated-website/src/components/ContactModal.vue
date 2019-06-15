@@ -92,6 +92,7 @@ export default {
 				});
 				this.$emit('hidden');
 			} catch (err) {
+				console.log(err);
 				this.$toasted.show(err, {
 					position: 'top-right',
 					duration: '3000'
