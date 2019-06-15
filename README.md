@@ -1,6 +1,6 @@
 # Portfolio Fabricator
 
-![preview](/_meta/assets/website-and-admin_08_06_19.png)
+![preview](/.project/assets/website-and-admin_08_06_19.png)
 
 ## Relevant Links
 - https://console.firebase.google.com/u/0/project/actions-codelab-edeb1/overview
@@ -13,7 +13,7 @@
 ## Overview
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
-The project roadmap defining neat future feature ideas can be found in [roadmap.md](/_meta/roadmap.md).
+The project roadmap defining neat future feature ideas can be found in [roadmap.md](/.project/roadmap.md).
 
 ## Architecture
 - **Fabricated Website**: generates a user's website and more info can be found in [/fabricated-website](/fabricated-website)

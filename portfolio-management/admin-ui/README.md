@@ -1,6 +1,6 @@
 # admin-ui
 
-![admin-ui](/_meta/assets/admin_08_06_19.png)
+![admin-ui](/.project/assets/admin_08_06_19.png)
 
 [https://portfolio-administration.web.app](https://portfolio-administration.web.app)
 
