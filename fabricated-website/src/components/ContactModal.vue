@@ -80,13 +80,24 @@ export default {
 		async onSubmit(e) {
 			e.preventDefault();
 			this.page.submitting = true;
-			await this.sendEmail({
-				name: this.name,
-				senderEmail: this.senderEmail,
-				message: this.message
-			});
+			try {
+				await this.sendEmail({
+					name: this.name,
+					senderEmail: this.senderEmail,
+					message: this.message
+				});
+				this.$toasted.show('Email sent', {
+					position: 'top-right',
+					duration: '3000'
+				});
+				this.$emit('hidden');
+			} catch (err) {
+				this.$toasted.show(err, {
+					position: 'top-right',
+					duration: '3000'
+				});
+			}
 			this.page.submitting = false;
-			this.$emit('hidden');
 		}
 	}
 };
