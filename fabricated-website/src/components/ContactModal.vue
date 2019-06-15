@@ -35,12 +35,19 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
 	props: {
 		visible: {
 			type: Boolean,
 			required: true
 		}
+	},
+	methods: {
+		...mapActions({
+			sendEmail: 'email/sendEmail'
+		})
 	}
 };
 </script>
