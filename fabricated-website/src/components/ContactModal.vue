@@ -2,7 +2,7 @@
 	<b-modal
 		body-class="ContactModal"
 		:visible="visible"
-		title="ContactModal"
+		title="Contact Me!"
 		ok-title="Send"
 		:ok-disabled="isSubmitDisabled"
 		@hidden="$emit('hidden')"
@@ -10,11 +10,9 @@
 
 		<p v-text="'Send me a message by filling out the form below!'"/>
 
-		<h3 v-text="'Your Details'"/>
-
 		<b-form-group
-			label="Name"
-			label-align-sm="right"
+			label="Name:"
+			label-align-sm="left"
 			label-for="ContactModal__name">
 			<b-form-input
 				id="ContactModal__name"
@@ -22,8 +20,8 @@
 		</b-form-group>
 
 		<b-form-group
-			label="Email"
-			label-align-sm="right"
+			label="Email:"
+			label-align-sm="left"
 			label-for="ContactModal__email">
 			<b-form-input
 				id="ContactModal__email"
@@ -31,10 +29,10 @@
 		</b-form-group>
 
 		<b-form-group
-			label="Message"
-			label-align-sm="right"
+			label="Message:"
+			label-align-sm="left"
 			label-for="ContactModal__message">
-			<b-form-input
+			<b-form-textarea
 				id="ContactModal__message"
 				size="lg"
 				v-model="message"/>
