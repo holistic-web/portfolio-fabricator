@@ -3,8 +3,10 @@
 export default {
 	namespaced: true,
 	actions: {
-		async sendEmail() {
-			throw new Error('not yet implemented...');
+		async sendEmail({ rootState }, { message, name, senderEmail }) {
+			const updateLights = rootState.firebase.functions().httpsCallable('sendEmail');
+			const result = await updateLights({ message, name, senderEmail });
+			return result;
 		}
 	}
 };
