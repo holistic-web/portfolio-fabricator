@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import firebase from 'firebase';
 import config from '../config';
 import portfolioStore from './modules/portfolio';
+import emailStore from './modules/email';
 
 Vue.use(Vuex);
 
@@ -14,7 +15,8 @@ const storeConfig = {
 		db
 	},
 	modules: {
-		portfolio: portfolioStore
+		portfolio: portfolioStore,
+		email: emailStore
 	}
 };
 

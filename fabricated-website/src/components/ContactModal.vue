@@ -1,52 +1,101 @@
 <template>
 	<b-modal
+		body-class="ContactModal"
 		:visible="visible"
 		title="ContactModal"
+		ok-title="Send"
+		:ok-disabled="isSubmitDisabled"
 		@hidden="$emit('hidden')"
-		ok-title="Send">
-		<p class="my-4">Send me a message by filling out the form below!</p>
-		<b-card bg-variant="light">
-			<b-form-group
-			label-cols-lg="3"
-			label="Your Details"
-			label-size="lg"
-			label-class="font-weight-bold pt-0"
-			class="mb-0">
-				<b-form-group
-					label-cols-sm="3"
-					label="Name"
-					label-align-sm="right"
-					label-for="nested-name">
-					<b-form-input id="nested-name"/>
-				</b-form-group>
+		@submit="onSubmit">
 
-				<b-form-group
-					label-cols-sm="3"
-					label="Email"
-					label-align-sm="right"
-					label-for="nested-email">
-					<b-form-input id="nested-email"/>
-				</b-form-group>
+		<p v-text="'Send me a message by filling out the form below!'"/>
 
-				<b-form-group
-					label-cols-sm="3"
-					label="Message"
-					label-align-sm="right"
-					label-for="nested-message">
-					<b-form-input id="nested-message" size="lg"/>
-				</b-form-group>
-			</b-form-group>
-		</b-card>
+		<h3 v-text="'Your Details'"/>
+
+		<b-form-group
+			label="Name"
+			label-align-sm="right"
+			label-for="ContactModal__name">
+			<b-form-input
+				id="ContactModal__name"
+				v-model="name"/>
+		</b-form-group>
+
+		<b-form-group
+			label="Email"
+			label-align-sm="right"
+			label-for="ContactModal__email">
+			<b-form-input
+				id="ContactModal__email"
+				v-model="senderEmail"/>
+		</b-form-group>
+
+		<b-form-group
+			label="Message"
+			label-align-sm="right"
+			label-for="ContactModal__message">
+			<b-form-input
+				id="ContactModal__message"
+				size="lg"
+				v-model="message"/>
+		</b-form-group>
+
 	</b-modal>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
 	props: {
 		visible: {
 			type: Boolean,
 			required: true
 		}
+	},
+	data() {
+		return {
+			page: {
+				submitting: false
+			},
+			name: null,
+			senderEmail: null,
+			message: null
+		};
+	},
+	computed: {
+		isSubmitDisabled() {
+			return (
+				this.name === null
+				|| this.sendEmail === null
+				|| this.message === null
+				|| this.page.submitting
+			);
+		}
+	},
+	methods: {
+		...mapActions({
+			sendEmail: 'email/sendEmail'
+		}),
+		async onSubmit(e) {
+			e.preventDefault();
+			this.page.submitting = true;
+			await this.sendEmail({
+				name: this.name,
+				senderEmail: this.senderEmail,
+				message: this.message
+			});
+			this.page.submitting = false;
+			this.$emit('hidden');
+		}
 	}
 };
 </script>
+
+<style lang="scss">
+.ContactModal {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+</style>

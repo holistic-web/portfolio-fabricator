@@ -20,7 +20,7 @@
 		},
 		"profession": {
 			"type": "string",
-			"title": "Proffession to display on the portfolio"
+			"title": "Profession to display on the portfolio"
 		},
 		"aboutMe": {
 			"type": "string",
@@ -50,11 +50,11 @@
 			"properties": {
 				"github": {
 					"type": "string",
-					"title": "github profile name"
+					"title": "GitHub profile name"
 				},
 				"linkenIn": {
 					"type": "string",
-					"title": "linkenIn profile name"
+					"title": "LinkenIn profile name"
 				},
 				"stackOverflow": {
 					"type": "string",
@@ -102,7 +102,7 @@
 						"type": "string",
 						"title": "When work was done with the organization"
 					},
-					"title": {
+					"description": {
 						"type": "string",
 						"title": "Brief description of the role"
 					},

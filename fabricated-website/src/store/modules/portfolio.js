@@ -2,7 +2,6 @@
 import { get as _get } from 'lodash';
 import portfolioFallback from '../../lib/portfolioFallback.json';
 
-
 export default {
 	namespaced: true,
 	state: {
