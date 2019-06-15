@@ -1,5 +1,7 @@
 <template>
 	<b-modal
+		size="lg"
+		cancel-variant="danger"
 		body-class="ContactModal"
 		:visible="visible"
 		title="Contact Me!"
