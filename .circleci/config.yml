@@ -39,4 +39,4 @@ workflows:
   version: 2
   build_and_publish:
     jobs:
-      - checkout_and_test:
+      - checkout_and_test
