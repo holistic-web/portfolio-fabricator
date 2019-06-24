@@ -16,9 +16,10 @@ This is a tool to allow users to store their personal information (i.e. educatio
 The project roadmap defining neat future feature ideas can be found in [roadmap.md](/.project/roadmap.md).
 
 ## Architecture
-_UPDATE ME_
+- **Management UI**: manages portfolio objects and more info can be found in [/management-ui](/management-ui)
 - **Fabricated Website**: generates a user's website and more info can be found in [/fabricated-website](/fabricated-website)
-- **Portfolio Management**: manages portfolio objects and more info can be found in [/portfolio-management](/portfolio-management)
+- **Database**: configures the schemas and indexes for the database [/database](/database)
+- **Cloud Functions**: providecloud support for the services [/cloud-functions](/cloud-functions)
 
 ## Developer Guidelines
 - raise an issue for any new ideas, features, or bug reports

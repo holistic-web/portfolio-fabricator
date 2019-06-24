@@ -1,7 +1,7 @@
 ## Database
-The database is a [Firestore Database](https://firebase.google.com/docs/firestore) and is managed in the [/database](/portfolio-management/database/) folder:
-- access rules are defined in [firestore.rules](/portfolio-management/database/firestore.rules)
-- index are defined in [firestore.indexes.json](/portfolio-management/database/firestore.indexes.json)
+The database is a [Firestore Database](https://firebase.google.com/docs/firestore) and is managed in the [/database](/database/) folder:
+- access rules are defined in [firestore.rules](/database/firestore.rules)
+- index are defined in [firestore.indexes.json](/database/firestore.indexes.json)
 - portfolios are stored in the `/portfolios` collection
 
 ### Deploying Changes

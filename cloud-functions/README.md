@@ -4,7 +4,7 @@ We use cloud functions to as to provide support for our services. Follow the doc
 
 ## Deploying Functions
 Functions can be deployed by:
-1. intalling dependencies in the `/functions` folder inside of this one
+1. installing dependencies in the `/functions` folder inside of this one
 2. navigating back to this folder `/cloud-functions` and running `firebase deploy`
 
 ## Functions
