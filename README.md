@@ -16,6 +16,7 @@ This is a tool to allow users to store their personal information (i.e. educatio
 The project roadmap defining neat future feature ideas can be found in [roadmap.md](/.project/roadmap.md).
 
 ## Architecture
+_UPDATE ME_
 - **Fabricated Website**: generates a user's website and more info can be found in [/fabricated-website](/fabricated-website)
 - **Portfolio Management**: manages portfolio objects and more info can be found in [/portfolio-management](/portfolio-management)
 
