@@ -21,6 +21,8 @@
 
 - toasts should be abstracted behind a toastservice
 
+- we seem to be using the same stores in multiple UIs. Maybe it's worth keeping these in a centralised location
+
 ## Cloud Functions
 - for setUpNewAccount we should keep the default values for portfolio and website objects in their own files
 
