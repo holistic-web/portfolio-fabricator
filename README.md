@@ -4,11 +4,11 @@
 
 ## Relevant Links
 - https://console.firebase.google.com/u/0/project/actions-codelab-edeb1/overview
-    _firebase console_
+	_firebase console_
 - https://actions-codelab-edeb1.firebaseapp.com/
-    _fabricated website
+	_fabricated website
 - https://portfolio-administration.web.app/log-in
-    _portfolio admin_
+	_portfolio admin_
 
 ## Overview
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
