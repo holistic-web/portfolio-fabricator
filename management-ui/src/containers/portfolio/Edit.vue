@@ -14,7 +14,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import portfolioSchema from '../../../../portfolio.schema.json';
+import portfolioSchema from '../../../../common/portfolio.schema.json';
 
 export default {
 	data() {

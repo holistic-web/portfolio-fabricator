@@ -1,6 +1,6 @@
-# admin-ui
+# Management UI
 
-![admin-ui](/.project/assets/admin_08_06_19.png)
+![preview](/.project/assets/admin_08_06_19.png)
 
 [https://portfolio-administration.web.app](https://portfolio-administration.web.app)
 
@@ -13,7 +13,7 @@ We use [`vue-json-schema-form`](https://www.npmjs.com/package/vue-json-schema-fo
 To get the project up and running:
 
 1. Ensure [Node.js](https://nodejs.org) is installed on the development machine
-2. Open a terminal and change directory to this folder (`/portfolio-management/admin-ui/`)
+2. Open a terminal and change directory to this folder (`/management-ui`)
 3. Run `npm install` to install project dependencies
 4. Run `npm run serve` to host the project locally
 5. If you want to build the project (to deploy it), run `npm run build` and follow the instructions displayed
