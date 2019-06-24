@@ -5,6 +5,7 @@ import VuexPersistence from 'vuex-persist';
 import config from '../config';
 import accountStore from './modules/account';
 import portfolioStore from './modules/portfolio';
+import websiteStore from './modules/website';
 
 Vue.use(Vuex);
 
@@ -25,7 +26,8 @@ const storeConfig = {
 	},
 	modules: {
 		account: accountStore,
-		portfolio: portfolioStore
+		portfolio: portfolioStore,
+		website: websiteStore
 	},
 	plugins: [
 		persistedState.plugin

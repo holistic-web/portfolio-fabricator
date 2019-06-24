@@ -9,5 +9,9 @@ service cloud.firestore {
 		match /portfolios/{key} {
 			allow write: if request.auth.uid == key;
 		}
+
+		match /websites/{key} {
+			allow write: if request.auth.uid == key;
+		}
 	}
 }
