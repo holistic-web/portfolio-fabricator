@@ -2,6 +2,8 @@
 
 ## Fabricated Website
 
+- could use a default layout component
+
 - pre render the fabricated website to static files with a tool like Nuxt.js
 
 - support displaying the fabricated website on custom urls
