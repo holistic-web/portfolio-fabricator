@@ -7,20 +7,44 @@
 			<b-btn variant="info" v-text="'detail'"/>
 		</router-link>
 
-		<schema-form v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
+		<span
+			v-if="page.isLoading"
+			v-text="'Loading...'"/>
+
+		<span
+			v-if="page.isSubmitting"
+			v-text="'Submitting...'"/>
+
+		<section v-if="!page.isLoading && !page.isSubmitting && portfolioData">
+
+			<b-form-group
+				label="Name:"
+				label-align-sm="middle"
+				label-for="Portfolio__name">
+				<b-form-input
+					id="Portfolio__name"
+					v-model="portfolioData.name.first"/>
+			</b-form-group>
+
+		</section>
 
 	</section>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import { cloneDeep } from 'lodash';
 import portfolioSchema from '../../../../common/portfolio.schema.json';
 
 export default {
 	data() {
 		return {
+			page: {
+				isLoading: false,
+				isSubmitting: false
+			},
 			portfolioSchema,
-			formData: {}
+			portfolioData: null
 		};
 	},
 	computed: {
@@ -39,7 +63,6 @@ export default {
 				position: 'bottom-right',
 				duration: '3000'
 			});
-			console.log('done');
 		}
 	},
 	watch: {
@@ -50,8 +73,12 @@ export default {
 			}
 		}
 	},
-	created() {
-		this.fetchPortfolio();
+	async created() {
+		this.page.isLoading = true;
+		await this.fetchPortfolio();
+		this.portfolioData = cloneDeep(this.portfolio);
+		console.log('this.portfolioData: ', this.portfolioData);
+		this.page.isLoading = false;
 	}
 };
 </script>
