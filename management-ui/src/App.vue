@@ -28,4 +28,12 @@ export default {
 	text-align: center;
 	color: #2c3e50;
 }
+
+/* Bootstrap Vue Customisation */
+// radio buttons that are clickable have mouse cursor
+.btn-group-toggle {
+	> label:not(.active) {
+		cursor: pointer !important;
+	}
+}
 </style>
