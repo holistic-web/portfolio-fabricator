@@ -12,7 +12,7 @@
     "buefy": "^0.7.7",
     "core-js": "^2.6.5",
     "firebase": "^6.1.0",
-    "lodash": "^4.17.11",
+    "lodash": "4.17.11",
     "vue": "^2.6.10",
     "vue-icon": "^2.1.1",
     "vue-json-schema-form": "^1.0.4",
