@@ -1,5 +1,5 @@
 <template>
-	<div id="app" v-if="portfolio">
+	<div id="app" v-if="!isLoading">
 
 		<vue-headful :title="`${portfolio.name.first} ${portfolio.name.last}`"/>
 		<contact-modal
@@ -42,6 +42,7 @@ export default {
 	},
 	data() {
 		return {
+			isLoading: false,
 			isModalVisible: false
 		};
 	},
@@ -52,7 +53,8 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			fetchPortfolioById: 'portfolio/fetchPortfolioById'
+			fetchPortfolioById: 'portfolio/fetchPortfolioById',
+			fetchWebsiteById: 'website/fetchWebsiteById'
 		}),
 		showModal() {
 			this.isModalVisible = true;
@@ -62,8 +64,13 @@ export default {
 		}
 	},
 	async created() {
+		this.isLoading = true;
 		const id = window.location.pathname.substring(1);
-		await this.fetchPortfolioById({ id });
+		await Promise.all([
+			this.fetchPortfolioById({ id }),
+			this.fetchWebsiteById({ id })
+		]);
+		this.isLoading = false;
 	}
 };
 

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import firebase from 'firebase';
 import config from '../config';
+import websiteStore from './modules/website';
 import portfolioStore from './modules/portfolio';
 import emailStore from './modules/email';
 
@@ -17,6 +18,7 @@ const storeConfig = {
 		functions
 	},
 	modules: {
+		website: websiteStore,
 		portfolio: portfolioStore,
 		email: emailStore
 	}

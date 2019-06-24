@@ -8,13 +8,18 @@
 
 					<b-nav class="AppHeader__menu">
 						<b-nav-item class="AppHeader__menu__item">
-							<router-link class="AppHeader__menu__link" :to="{ name: 'portfolio.detail' }">Portfolio</router-link>
+
+							<router-link
+								class="AppHeader__menu__link"
+								:to="{ name: 'portfolio.detail' }"
+								v-text="'Portfolio'"/>
+
+							<router-link
+								class="AppHeader__menu__link"
+								:to="{ name: 'website.detail' }"
+								v-text="'Website'"/>
+
 						</b-nav-item>
-						<b-dropdown text="Primary" variant="primary" class="m-2">
-							<b-dropdown-item href="#">Action</b-dropdown-item>
-							<b-dropdown-item href="#">Another action</b-dropdown-item>
-							<b-dropdown-item href="#">Something else here</b-dropdown-item>
-						</b-dropdown>
 					</b-nav>
 
 					<b-btn

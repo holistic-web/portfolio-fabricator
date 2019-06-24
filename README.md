@@ -4,11 +4,11 @@
 
 ## Relevant Links
 - https://console.firebase.google.com/u/0/project/actions-codelab-edeb1/overview
-    _firebase console_
+	_firebase console_
 - https://actions-codelab-edeb1.firebaseapp.com/
-    _fabricated website
+	_fabricated website
 - https://portfolio-administration.web.app/log-in
-    _portfolio admin_
+	_portfolio admin_
 
 ## Overview
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
@@ -16,6 +16,7 @@ This is a tool to allow users to store their personal information (i.e. educatio
 The project roadmap defining neat future feature ideas can be found in [roadmap.md](/.project/roadmap.md).
 
 ## Architecture
+- **Project Info**: project roadmap and currently known issues [/.project](/.project)
 - **Management UI**: manages portfolio objects and more info can be found in [/management-ui](/management-ui)
 - **Fabricated Website**: generates a user's website and more info can be found in [/fabricated-website](/fabricated-website)
 - **Database**: configures the schemas and indexes for the database [/database](/database)
