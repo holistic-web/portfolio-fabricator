@@ -17,6 +17,8 @@
 
 - store messages sent to user in a database and provide inbox and notification functionality
 
+## Cloud Functions
+- for setUpNewAccount we should keep the default values for portfolio and website objects in their own files
 
 ## Other Services
 

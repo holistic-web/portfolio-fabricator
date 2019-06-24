@@ -9,8 +9,8 @@ Functions can be deployed by:
 
 ## Functions
 
-### `createPortfolioOnNewAccount`
-This function creates a portfolio object under a user's `uid`. It's triggered whenever a new user sign's up to our service.
+### `setUpNewAccount`
+This function creates a portfolio and a website object under a user's `uid`. It's triggered whenever a new user signs up to our service.
 
 ### `sendEmail`
 This is a callable function that sends an email using nodemailer. It uses the gmail account `holistic.web.mailer@gmail.com` and the password is set as an environment variable in firebase.
