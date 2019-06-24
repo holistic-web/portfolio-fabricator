@@ -75,7 +75,6 @@ export default {
 		async fetch() {
 			this.page.isLoading = true;
 			await this.fetchWebsite();
-			this.websiteData = this.website;
 			this.page.isLoading = false;
 		},
 		async onSubmitClick() {
@@ -92,7 +91,7 @@ export default {
 		website: {
 			immediate: true,
 			handler() {
-				this.formData = this.website;
+				this.websiteData = this.website;
 			}
 		}
 	},
