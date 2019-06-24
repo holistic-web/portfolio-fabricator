@@ -11,6 +11,7 @@
 			</span>
 
 			<b-button
+				v-if="website.settings.showContactForm"
 				class="Header__contactButton"
 				variant="outline-primary"
 				size="lg"
@@ -34,7 +35,8 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			portfolio: 'portfolio/portfolio'
+			portfolio: 'portfolio/portfolio',
+			website: 'website/website'
 		}),
 		headerShadowClassName() {
 			if (this.scrollDistance > 10) return 'Header--shadow';

@@ -13,6 +13,8 @@
 	- Let a custom vue component be rendered in the site
 	- Allow the user to choose the site colours
 
+- get information required for fabricated website from single firebase function
+
 ## Admin UI
 
 - store messages sent to user in a database and provide inbox and notification functionality
