@@ -18,7 +18,6 @@
 		<section v-if="!page.isLoading && !page.isSubmitting">
 
 			<b-form-group
-				v-if="!page.isSubmitting"
 				label="Show Contact Form"
 				for="WebsiteEdit__showContactForm">
 				<b-form-radio-group
