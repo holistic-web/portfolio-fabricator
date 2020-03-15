@@ -28,5 +28,12 @@ The project roadmap defining neat future feature ideas can be found in [roadmap.
 - be sure to follow the code style guide defined in each project
 
 ## Roadmap
-- currently the generated forms are ugly, we should find a nicer looking solution
+
+### Tech Debt and Simplification
+- replace email with magic firebase autmatic email: https://firebase.google.com/products/extensions/firestore-send-email
+
+### Polish and Bufgixes
+- currently the generated forms are ugly, we should find a nicer looking solution. Potentially vue-form-latte
+
+### Features and Strategic Work
 - allow user to turn off contact form with a config setting like `website.showEmailForm`
