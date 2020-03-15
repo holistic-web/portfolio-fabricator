@@ -29,3 +29,4 @@ The project roadmap defining neat future feature ideas can be found in [roadmap.
 
 ## Roadmap
 - currently the generated forms are ugly, we should find a nicer looking solution
+- allow user to turn off contact form with a config setting like `website.showEmailForm`
