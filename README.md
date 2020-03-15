@@ -26,3 +26,6 @@ The project roadmap defining neat future feature ideas can be found in [roadmap.
 - raise an issue for any new ideas, features, or bug reports
 - to make changes create a pull request and submit it for review
 - be sure to follow the code style guide defined in each project
+
+## Roadmap
+- currently the generated forms are ugly, we should find a nicer looking solution
