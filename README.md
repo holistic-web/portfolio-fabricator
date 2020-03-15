@@ -37,3 +37,7 @@ The project roadmap defining neat future feature ideas can be found in [roadmap.
 
 ### Features and Strategic Work
 - allow user to turn off contact form with a config setting like `website.showEmailForm`
+- allow user to set
+- website should be able to be hosted from a specific url (maybe via redirects? or nuxt? or use Github?)
+- generate a PDF CV from the user's data
+- allow the user to store some kind of portfolio, and optionally display in the website
