@@ -1,43 +1,26 @@
 # Portfolio Fabricator
-
-![preview](/.project/assets/website-and-admin_08_06_19.png)
-
-## Relevant Links
-- https://console.firebase.google.com/u/0/project/actions-codelab-edeb1/overview
-	_firebase console_
-- https://actions-codelab-edeb1.firebaseapp.com/
-	_fabricated website
-- https://portfolio-administration.web.app/log-in
-	_portfolio admin_
-
-## Overview
 This is a tool to allow users to store their personal information (i.e. education, work experience) in a single location and easily export it to other sources.
 
-The project roadmap defining neat future feature ideas can be found in [roadmap.md](/.project/roadmap.md).
+![preview](/.project/images/preview.png)
 
-## Architecture
-- **Project Info**: project roadmap and currently known issues [/.project](/.project)
-- **Management UI**: manages portfolio objects and more info can be found in [/management-ui](/management-ui)
-- **Fabricated Website**: generates a user's website and more info can be found in [/fabricated-website](/fabricated-website)
-- **Database**: configures the schemas and indexes for the database [/database](/database)
-- **Cloud Functions**: providecloud support for the services [/cloud-functions](/cloud-functions)
+## Factsheet
+| **Key**          | **Value**                                             |
+|------------------|-------------------------------------------------------|
+| Live URL         | https://portfolio-administration.web.app              |
+| Firebase Project | portfolio-fabricator                                  |
+| Roadmap          | [.project/roadmap.md](/.project/roadmap.md)           |
+| Known Issues     | [.project/known-issues.md](/.project/known-issues.md) |
 
-## Developer Guidelines
-- raise an issue for any new ideas, features, or bug reports
-- to make changes create a pull request and submit it for review
-- be sure to follow the code style guide defined in each project
+## Contents
 
-## Roadmap
+### Cloud Functions
+Firebase cloud functions to provide support for other services. More info can be found in [cloud-functions](/cloud-functions).
 
-### Tech Debt and Simplification
-- replace email with magic firebase autmatic email: https://firebase.google.com/products/extensions/firestore-send-email
+### Database
+Configurations, indexes and schemas required by the Firestore databse. More infor can be found in [database](/database).
 
-### Polish and Bufgixes
-- currently the generated forms are ugly, we should find a nicer looking solution. Potentially vue-form-latte
+### Fabricated Website
+A web app that renders a user's website based on an ID provided in the url. More info can be found in [fabricated-website](/fabricated-website).
 
-### Features and Strategic Work
-- allow user to turn off contact form with a config setting like `website.showEmailForm`
-- allow user to set
-- website should be able to be hosted from a specific url (maybe via redirects? or nuxt? or use Github?)
-- generate a PDF CV from the user's data
-- allow the user to store some kind of portfolio, and optionally display in the website
+### Management UI
+A web app to manage portfolio objects. More info can be found in [management-ui](/management-ui).
