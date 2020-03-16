@@ -1,37 +1,37 @@
 # Roadmap
 
-## Fabricated Website
+## Tech Debt and Simplification
 
-- could use a default layout component
+- replace email with magic firebase automatic email: https://firebase.google.com/products/extensions/firestore-send-email
 
-- pre render the fabricated website to static files with a tool like Nuxt.js
+- for the setUpNewAccount cloud function we should keep the default values for portfolio and website objects in their own files
 
-- support displaying the fabricated website on custom urls
+
+## Polish and Bufgixes
+
+- currently the generated forms are ugly, we should find a nicer looking solution. Potentially vue-form-latte
+
+
+## Features and Strategic Work
+
+- allow user to turn off contact form with a config setting like `website.showEmailForm`
+
+- website should be able to be hosted from a specific url (maybe via redirects? or use Github?)
+
+- generate a PDF CV from the user's data
 
 - Let a user customise the site's appearance further
 	- Let user add text in markdown
 	- Let a custom vue component be rendered in the site
 	- Allow the user to choose the site colours
 
-- get information required for fabricated website from single firebase function
 
-## Admin UI
+## Long Shots
 
-- store messages sent to user in a database and provide inbox and notification functionality
-
-- toasts should be abstracted behind a toastservice
-
-- we seem to be using the same stores in multiple UIs. Maybe it's worth keeping these in a centralised location
-
-## Cloud Functions
-- for setUpNewAccount we should keep the default values for portfolio and website objects in their own files
-
-## Other Services
-
-- generate a pdf CV from the portfolio
+- pre render a static website when a user changes their settings, using something like Nuxt.
 
 - generate business cards from the portfolio
 
-- import and export data to / from portfolio objects and third parts (i.e. linkedIn)
+- import / export data from third parties such as LinkedIn
 
-- build some form of job oppurtinities dashboard
+- integrate with employers to create some form of job opputunities dashboard

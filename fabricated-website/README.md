@@ -1,31 +1,43 @@
 # Fabricated Website
+A dynamic web app that loads the website for a particular user based on url. It is written in [Vue.js](https://vuejs.org/).
 
-![preview](/.project/assets/website_20-05-19.png)
+![preview](/.project/images/preview-management-website)
 
-This is the static website generated from the portfolio object. It is written using [Vue.js](https://vuejs.org/).
+## Factsheet
+| **Key**      | **Value**                             |
+|--------------|---------------------------------------|
+| Project Type | Vue.js web app                        |
+| Live URL     | https://actions-codelab-edeb1.web.app |
 
-It is a simple single page layout and can be seen at https://actions-codelab-edeb1.firebaseapp.com.
+## Development
+To develop for this project:
+1. Install dependencies
+	```
+	npm install
+	```
+2. Host the project locally in development mode
+	```
+	npm run serve
+	```
 
-## Routing
+## Deployment
+Deployment will soon be handled by our github workflow on push to the master branch.
+
+Manual deployment is not recommended but in case we ever need to do the following on a machine with the firebase cli installed.
+
+1. Build the project
+	```
+	npm run build
+	```
+2. Deploy the project
+	```
+	firebase deploy
+
+
+## Notes and Caveats
+
+### Routing
 The path after the url is used to calculate which portfolio object to load. If it fails it falls back to the default portfolio object, with id: `QfwSbM08eJAmaW9WgWGU`.
 
-## Getting Started
-To get the project up and running:
-
-1. Ensure [Node.js](https://nodejs.org) is installed on the development machine
-2. Open a terminal and change directory to this folder (`/fabricated-website`)
-3. Run `npm install` to install project dependencies
-4. Run `npm run serve` to host the project locally
-5. If you want to build the project (to deploy it), run `npm run build` and follow the instructions displayed
-
-
-## Hosting and Deployment
-This site is hosted on firebase project 'Portfolio Fabricator'. Raise an issue to gain access if you don't have it already.
-
-To deploy the project:
-1. Ensure the steps in 'Getting started' all complete succesfully
-2. Run `npm run build` from this folder to generate the build
-3. Run `firebase deploy` to update the live deployment with the generated build
-
-## Theming
+### Theming
 The colour settings for the site and for Bootstrap components can be found in [/styles/theme.scss](/fabricated-website/src/styles/theme.scss).
