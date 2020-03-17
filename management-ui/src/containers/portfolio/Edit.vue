@@ -7,16 +7,18 @@
 			<b-btn variant="info" v-text="'detail'"/>
 		</router-link>
 
-		<schema-form v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
+		<SchemaForm v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
 
 	</section>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import { SchemaForm } from 'formvuelatte';
 import portfolioSchema from '../../../../common/portfolio.schema.json';
 
 export default {
+	components: { SchemaForm },
 	data() {
 		return {
 			portfolioSchema,
