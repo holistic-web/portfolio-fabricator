@@ -7,7 +7,7 @@
 			<b-btn variant="info" v-text="'detail'"/>
 		</router-link>
 
-		<SchemaForm v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
+		<SchemaForm v-if="portfolio" :schema="formSchema" v-model="formData" @submit="onSubmitClick"/>
 
 	</section>
 </template>
@@ -16,6 +16,7 @@
 import { mapActions, mapGetters } from 'vuex';
 import { SchemaForm } from 'formvuelatte';
 import portfolioSchema from '../../../../common/portfolio.schema.json';
+import portfolioFormSchema from '../../../../common/portfolio.formSchema.js';
 
 export default {
 	components: { SchemaForm },
@@ -28,7 +29,10 @@ export default {
 	computed: {
 		...mapGetters({
 			portfolio: 'portfolio/portfolio'
-		})
+		}),
+		formSchema() {
+			return portfolioFormSchema;
+		}
 	},
 	methods: {
 		...mapActions({
