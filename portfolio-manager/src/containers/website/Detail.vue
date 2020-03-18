@@ -1,16 +1,24 @@
 <template>
-	<section class="WebsiteDetail">
+	<section class="ElWrapper WebsiteDetail">
 
-		<h1>Website</h1>
+		<section class="WebsiteDetail__title">
+			<h1>Website</h1>
 
-		<router-link :to="{ name: 'website.edit' }">
-			<el-button v-text="'Edit'" variant="info"/>
-		</router-link>
+			<el-button
+				v-text="'Edit'"
+				variant="outline-primary"
+				size="sm"
+				:to="{ name: 'website.edit' }"/>
+		</section>
 
 		<p>Your website can be viewed at <a :href="websiteUrl" v-text="websiteUrl" target="_blank"/></p>
 
-		<span v-if="!website" class="text-error">There was a problem loading your website.</span>
-
+		<span
+			v-if="page.isLoading"
+			v-text="'Loading...'"/>
+		<span v-else-if="!website" class="text-error">
+			There was a problem loading your website.
+		</span>
 		<template v-else>
 			<pre class="WebsiteDetail__detail"> {{ JSON.stringify(website, null, 4) }} </pre>
 		</template>
@@ -28,6 +36,9 @@ export default {
 	},
 	data() {
 		return {
+			page: {
+				isLoading: false
+			},
 			errorText: null
 		};
 	},
@@ -46,21 +57,28 @@ export default {
 			fetchWebsite: 'website/fetchWebsite'
 		})
 	},
-	created() {
-		this.fetchWebsite();
+	async created() {
+		this.page.isLoading = true;
+		await this.fetchWebsite();
+		this.page.isLoading = false;
 	}
 };
 </script>
 
 <style lang="scss">
+@import '@holistic-web/el-layout/src/styles/theme';
 
-.PortfolioDetail {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
+.WebsiteDetail {
+
+	&__title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
 
 	&__detail {
-		text-align: left;
+		color: $secondary;
 	}
 }
 

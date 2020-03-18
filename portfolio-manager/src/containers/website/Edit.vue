@@ -1,23 +1,26 @@
 <template>
-	<section class="WebsiteEdit">
+	<section class="ElWrapper WebsiteEdit">
 
-		<h1>Website</h1>
+		<section class="WebsiteEdit__title">
+			<h1>Website</h1>
 
-		<router-link :to="{ name: 'website.detail' }">
-			<el-button variant="info" v-text="'detail'"/>
-		</router-link>
+			<el-button
+				variant="outline-primary"
+				size="sm"
+				v-text="'detail'"
+				:to="{ name: 'website.detail' }"/>
+		</section>
 
 		<span
 			v-if="page.isLoading"
 			v-text="'Loading...'"/>
-
 		<span
-			v-if="page.isSubmitting"
+			v-else-if="page.isSubmitting"
 			v-text="'Submitting...'"/>
-
-		<section v-if="!page.isLoading && !page.isSubmitting">
+		<section v-else-if="website">
 
 			<b-form-group
+				class="WebsiteEdit__input"
 				label="Show Contact Form"
 				for="WebsiteEdit__showContactForm">
 				<b-form-radio-group
@@ -35,7 +38,7 @@
 		<el-button
 			variant="outline-primary"
 			:disabled="isSubmitButtonDisabled"
-			@click="onSubmitClick"
+			@click.native="onSubmitClick"
 			v-text="'Submit'"/>
 
 	</section>
@@ -107,9 +110,17 @@ export default {
 <style lang="scss">
 
 .WebsiteEdit {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
+
+	&__title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
+
+	&__input {
+		margin-bottom: 2rem;
+	}
 }
 
 </style>

@@ -11,14 +11,18 @@
 				:to="{ name: 'portfolio.edit' }"/>
 		</section>
 
-
 		<p>Your website can be viewed at <a :href="websiteUrl" v-text="websiteUrl" target="_blank"/></p>
 
-		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
-
-		<template v-else>
-			<pre class="PortfolioDetail__detail"> {{ JSON.stringify(portfolio, null, 4) }} </pre>
-		</template>
+		<span
+			v-if="page.isLoading"
+			v-text="'Loading...'"/>
+		<span v-else-if="!portfolio" class="text-error">
+			There was a problem loading your portfolio.
+		</span>
+		<pre
+			v-else
+			class="PortfolioDetail__detail"
+			v-text="JSON.stringify(portfolio, null, 4)"/>
 
 	</section>
 </template>
@@ -33,6 +37,9 @@ export default {
 	},
 	data() {
 		return {
+			page: {
+				isLoading: false
+			},
 			errorText: null
 		};
 	},
@@ -51,8 +58,10 @@ export default {
 			fetchPortfolio: 'portfolio/fetchPortfolio'
 		})
 	},
-	created() {
-		this.fetchPortfolio();
+	async created() {
+		this.page.isLoading = true;
+		await this.fetchPortfolio();
+		this.page.isLoading = false;
 	}
 };
 </script>
