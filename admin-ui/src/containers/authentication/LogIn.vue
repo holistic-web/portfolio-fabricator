@@ -20,7 +20,7 @@
 					placeholder="Password"/>
 			</b-form-group>
 
-			<b-btn
+			<el-button
 				class="LoginAccount__button"
 				variant="info"
 				v-text="'Log In'"
@@ -28,7 +28,7 @@
 
 			<router-link
 				:to="{ name: 'authentication.signUp' }">
-				<b-btn
+				<el-button
 					class="LoginAccount__button"
 					variant="primary"
 					v-text="'Create Account'"/>
@@ -40,15 +40,18 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { ElButton } from '@holistic-web/el-layout';
 
 export default {
+	components: {
+		ElButton
+	},
 	data() {
 		return {
 			user: { },
 			errorText: null
 		};
 	},
-
 	methods: {
 		...mapActions({
 			loginAccount: 'account/logIn'

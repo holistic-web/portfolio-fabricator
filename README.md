@@ -22,5 +22,5 @@ Configurations, indexes and schemas required by the Firestore databse. More info
 ### Fabricated Website
 A web app that renders a user's website based on an ID provided in the url. More info can be found in [fabricated-website](/fabricated-website).
 
-### Management UI
-A web app to manage portfolio objects. More info can be found in [management-ui](/management-ui).
+### Admin UI
+A web app to manage portfolio objects. More info can be found in [admin-ui](/admin-ui).

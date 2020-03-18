@@ -4,7 +4,7 @@
 		<h1>Portfolio</h1>
 
 		<router-link :to="{ name: 'portfolio.detail' }">
-			<b-btn variant="info" v-text="'detail'"/>
+			<el-button variant="info" v-text="'detail'"/>
 		</router-link>
 
 		<schema-form v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
@@ -14,9 +14,13 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import { ElButton } from '@holistic-web/el-layout';
 import portfolioSchema from '../../../../common/portfolio.schema.json';
 
 export default {
+	components: {
+		ElButton
+	},
 	data() {
 		return {
 			portfolioSchema,

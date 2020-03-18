@@ -1,4 +1,4 @@
-# Management UI
+# Admin UI
 Admin UI that allows a user to build a portfolio object to generate the site for the `[/fabricated-website]([/fabricated-website)` section of this project.
 
 ![preview](/.project/images/preview-management-ui.png)

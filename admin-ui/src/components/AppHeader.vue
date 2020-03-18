@@ -22,7 +22,7 @@
 						</b-nav-item>
 					</b-nav>
 
-					<b-btn
+					<el-button
 						variant="outline-danger"
 						size="sm"
 						v-text="'Log Out'"
@@ -35,11 +35,13 @@
 </template>
 
 <script>
-
 import { mapActions } from 'vuex';
+import { ElButton } from '@holistic-web/el-layout';
 
 export default {
-
+	components: {
+		ElButton
+	},
 	methods: {
 		...mapActions({
 			logOutUser: 'account/logOut'

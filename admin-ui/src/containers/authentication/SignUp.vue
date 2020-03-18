@@ -33,14 +33,14 @@
 
 			<p class="text-danger" v-text="errorText"/>
 
-			<b-btn
+			<el-button
 				class="CreateAccount__button"
 				:disabled="!isFormValid"
 				variant="primary"
 				v-text="'Create Account'"
 				@click="onSubmit"/>
 
-			<b-btn
+			<el-button
 				class="CreateAccount__button"
 				type="reset"
 				variant="warning"
@@ -48,7 +48,7 @@
 				@click="clearData"/>
 			<router-link
 				:to="{ name: 'authentication.logIn' }">
-				<b-btn
+				<el-button
 					class="CreateAccount__button"
 					type="submit"
 					variant="info"
@@ -60,9 +60,13 @@
 </template>
 
 <script>
+import { ElButton } from '@holistic-web/el-layout';
 import { mapActions } from 'vuex';
 
 export default {
+	components: {
+		ElButton
+	},
 	data() {
 		return {
 			newUser: {},

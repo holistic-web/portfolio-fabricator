@@ -4,7 +4,7 @@
 		<h1>Website</h1>
 
 		<router-link :to="{ name: 'website.detail' }">
-			<b-btn variant="info" v-text="'detail'"/>
+			<el-button variant="info" v-text="'detail'"/>
 		</router-link>
 
 		<span
@@ -32,7 +32,7 @@
 
 		</section>
 
-		<b-btn
+		<el-button
 			variant="outline-primary"
 			:disabled="isSubmitButtonDisabled"
 			@click="onSubmitClick"
@@ -43,8 +43,12 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import { ElButton } from '@holistic-web/el-layout';
 
 export default {
+	components: {
+		ElButton
+	},
 	data() {
 		return {
 			page: {

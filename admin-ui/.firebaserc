@@ -1,0 +1,14 @@
+{
+	"projects": {
+		"default": "actions-codelab-edeb1"
+	},
+	"targets": {
+		"actions-codelab-edeb1": {
+			"hosting": {
+				"portfolio-administration": [
+					"portfolio-administration"
+				]
+			}
+		}
+	}
+}

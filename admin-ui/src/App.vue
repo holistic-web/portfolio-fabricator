@@ -1,32 +1,38 @@
 <template>
 	<div id="app">
 
-		<app-header/>
+		<el-layout title="Portfolio Fabricator">
+			<router-view/>
+		</el-layout>
 
-		<router-view/>
+		<app-header/>
 
 	</div>
 </template>
 
 <script>
+import Vue from 'vue';
+import { ElLayout } from '@holistic-web/el-layout';
 import AppHeader from './components/AppHeader.vue';
 
 export default {
 	components: {
+		ElLayout,
 		AppHeader
+	},
+	created() {
+		const { components } = Vue.options;
+		console.log('components: ', components);
 	}
 };
 </script>
 
 <style lang="scss">
-@import 'bootstrap/scss/bootstrap.scss';
-
 #app {
 	font-family: 'Avenir', Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #2c3e50;
 }
 
 /* Bootstrap Vue Customisation */

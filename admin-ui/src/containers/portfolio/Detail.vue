@@ -1,18 +1,18 @@
 <template>
-	<section class="WebsiteDetail">
+	<section class="PortfolioDetail">
 
-		<h1>Website</h1>
+		<h1>Portfolio</h1>
 
-		<router-link :to="{ name: 'website.edit' }">
-			<b-btn v-text="'Edit'" variant="info"/>
+		<router-link :to="{ name: 'portfolio.edit' }">
+			<el-button v-text="'Edit'" variant="info"/>
 		</router-link>
 
 		<p>Your website can be viewed at <a :href="websiteUrl" v-text="websiteUrl" target="_blank"/></p>
 
-		<span v-if="!website" class="text-error">There was a problem loading your website.</span>
+		<span v-if="!portfolio" class="text-error">There was a problem loading your portfolio.</span>
 
 		<template v-else>
-			<pre class="WebsiteDetail__detail"> {{ JSON.stringify(website, null, 4) }} </pre>
+			<pre class="PortfolioDetail__detail"> {{ JSON.stringify(portfolio, null, 4) }} </pre>
 		</template>
 
 	</section>
@@ -20,8 +20,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { ElButton } from '@holistic-web/el-layout';
 
 export default {
+	components: {
+		ElButton
+	},
 	data() {
 		return {
 			errorText: null
@@ -29,7 +33,7 @@ export default {
 	},
 	computed: {
 		...mapGetters({
-			website: 'website/website',
+			portfolio: 'portfolio/portfolio',
 			authentication: 'account/authentication'
 		}),
 		websiteUrl() {
@@ -39,11 +43,11 @@ export default {
 	},
 	methods: {
 		...mapActions({
-			fetchWebsite: 'website/fetchWebsite'
+			fetchPortfolio: 'portfolio/fetchPortfolio'
 		})
 	},
 	created() {
-		this.fetchWebsite();
+		this.fetchPortfolio();
 	}
 };
 </script>
