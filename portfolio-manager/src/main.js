@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Buefy from 'buefy';
-import 'buefy/dist/buefy.css';
+// import 'buefy/dist/buefy.css';
 // import '@holistic-web/toolbox-layout';
 import '@holistic-web/el-layout';
 import '@holistic-web/el-layout/dist/el-layout.css';

@@ -1,37 +1,36 @@
 <template>
-	<div class="CreateAccount">
-		<h1>Sign up for an Account</h1>
+	<b-form class="CreateAccount">
 
-		<b-form class="CreateAccount__form">
+		<b-form-group class="CreateAccount__input" label="Enter your Email Address">
+			<b-form-input
+				v-model.trim="newUser.email"
+				type="email"
+				required
+				placeholder="Email Address"/>
+		</b-form-group>
 
-			<b-form-group label="Enter your Email Address">
-				<b-form-input
-					v-model.trim="newUser.email"
-					type="email"
-					required
-					placeholder="Email Address"/>
-			</b-form-group>
+		<b-form-group class="CreateAccount__input" label="Enter your Password">
+			<b-form-input
+				v-model="newUser.password"
+				type="password"
+				required
+				placeholder="Password"/>
+		</b-form-group>
 
-			<b-form-group label="Enter your Password">
-				<b-form-input
-					v-model="newUser.password"
-					type="password"
-					required
-					placeholder="Password"/>
-			</b-form-group>
+		<b-form-group class="CreateAccount__input" label="Confirm your Password">
+			<b-form-input
+				v-model="newUser.confirmPassword"
+				type="password"
+				required
+				:state="!confirmPasswordFeedback && !!newUser.confirmPassword"
+				placeholder="Confirm Password"/>
+		</b-form-group>
 
-			<b-form-group label="Confirm your Password">
-				<b-form-input
-					v-model="newUser.confirmPassword"
-					type="password"
-					required
-					:state="!confirmPasswordFeedback && !!newUser.confirmPassword"
-					placeholder="Confirm Password"/>
-			</b-form-group>
+		<span class="text-danger" v-text="confirmPasswordFeedback"/>
 
-			<span class="text-danger" v-text="confirmPasswordFeedback"/>
+		<p class="text-danger" v-text="errorText"/>
 
-			<p class="text-danger" v-text="errorText"/>
+		<section class="CreateAccount__actions">
 
 			<el-button
 				class="CreateAccount__button"
@@ -40,23 +39,25 @@
 				v-text="'Create Account'"
 				@click="onSubmit"/>
 
-			<el-button
-				class="CreateAccount__button"
-				type="reset"
-				variant="warning"
-				v-text="'Reset'"
-				@click="clearData"/>
 			<router-link
 				:to="{ name: 'authentication.logIn' }">
 				<el-button
 					class="CreateAccount__button"
 					type="submit"
-					variant="info"
+					variant="outline-primary"
 					v-text="'Existing User?'"/>
 			</router-link>
 
-		</b-form>
-	</div>
+			<el-button
+				class="CreateAccount__button"
+				type="reset"
+				variant="outline-danger"
+				v-text="'Reset'"
+				@click="clearData"/>
+
+		</section>
+
+	</b-form>
 </template>
 
 <script>
@@ -100,7 +101,6 @@ export default {
 					password: this.newUser.password
 				});
 			} catch (e) {
-				console.error(e);
 				this.errorText = e.message;
 			}
 		},
@@ -116,6 +116,14 @@ export default {
 
 .CreateAccount {
 	padding: 1rem;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	&__input {
+		width: 100%;
+		margin-bottom: 1rem;
+	}
 
 	&__button {
 		margin: 1rem;

@@ -4,6 +4,6 @@
 
 - we have buefy and bootstrap vue mixed, lets resolve that
 
-- 'index.js' is not resolved as the default file in the project (at least for admin UI)
+- 'index.js' is not resolved as the default file in the project (at least for Portfolio Manager)
 
 - when developing the fabricated ui locally we have to account for the url not containing a valid id

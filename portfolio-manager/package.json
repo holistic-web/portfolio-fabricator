@@ -1,5 +1,5 @@
 {
-	"name": "admin-ui",
+	"name": "portfolio-manager",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -8,9 +8,9 @@
 		"lint": "vue-cli-service lint"
 	},
 	"dependencies": {
-		"@holistic-web/el-layout": "0.0.4",
+		"@holistic-web/el-layout": "0.0.5",
 		"buefy": "^0.7.7",
-		"core-js": "^3.4.4",
+		"core-js": "^3.6.4",
 		"firebase": "^6.1.0",
 		"vue": "^2.6.11",
 		"vue-icon": "^2.1.1",

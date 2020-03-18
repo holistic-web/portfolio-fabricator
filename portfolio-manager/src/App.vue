@@ -1,7 +1,10 @@
 <template>
 	<div id="app">
 
-		<el-layout title="Portfolio Fabricator">
+		<el-layout>
+			<template v-slot:header>
+				<app-header />
+			</template>
 			<router-view/>
 		</el-layout>
 
@@ -11,7 +14,6 @@
 </template>
 
 <script>
-import Vue from 'vue';
 import { ElLayout } from '@holistic-web/el-layout';
 import AppHeader from './components/AppHeader.vue';
 
@@ -20,19 +22,18 @@ export default {
 		ElLayout,
 		AppHeader
 	},
-	created() {
-		const { components } = Vue.options;
-		console.log('components: ', components);
+	computed: {
+		isAuthenticationPage() {
+			const isAuthenticationPage = this.$route.name.startsWith('authentication.');
+			return isAuthenticationPage;
+		}
 	}
 };
 </script>
 
 <style lang="scss">
 #app {
-	font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
+	font-family: 'Fira Code', monospace;
 }
 
 /* Bootstrap Vue Customisation */
