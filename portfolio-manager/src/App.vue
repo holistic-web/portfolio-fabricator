@@ -8,8 +8,6 @@
 			<router-view/>
 		</el-layout>
 
-		<app-header/>
-
 	</div>
 </template>
 

@@ -1,11 +1,16 @@
 <template>
-	<section class="PortfolioDetail">
+	<section class="ElWrapper PortfolioDetail">
 
-		<h1>Portfolio</h1>
+		<section class="PortfolioDetail__title">
+			<h1>Portfolio</h1>
 
-		<router-link :to="{ name: 'portfolio.edit' }">
-			<el-button v-text="'Edit'" variant="info"/>
-		</router-link>
+			<el-button
+				v-text="'Edit'"
+				variant="outline-secondary"
+				size="sm"
+				:to="{ name: 'portfolio.edit' }"/>
+		</section>
+
 
 		<p>Your website can be viewed at <a :href="websiteUrl" v-text="websiteUrl" target="_blank"/></p>
 
@@ -53,14 +58,19 @@ export default {
 </script>
 
 <style lang="scss">
+@import '@holistic-web/el-layout/src/styles/theme';
 
 .PortfolioDetail {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
+
+	&__title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
 
 	&__detail {
-		text-align: left;
+		color: $secondary;
 	}
 }
 

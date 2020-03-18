@@ -1,13 +1,22 @@
 <template>
-	<section class="PortfolioEdit">
+	<section class="ElWrapper PortfolioEdit">
 
-		<h1>Portfolio</h1>
+		<section class="PortfolioEdit__title">
+			<h1>Portfolio</h1>
 
-		<router-link :to="{ name: 'portfolio.detail' }">
-			<el-button variant="info" v-text="'detail'"/>
-		</router-link>
+			<el-button
+				variant="outline-secondary"
+				size="sm"
+				v-text="'detail'"
+				:to="{ name: 'portfolio.detail' }"/>
+		</section>
 
-		<schema-form v-if="portfolio" :schema="portfolioSchema" v-model="formData" @submit="onSubmitClick"/>
+
+		<schema-form
+			v-if="portfolio"
+			:schema="portfolioSchema"
+			v-model="formData"
+			@submit="onSubmitClick"/>
 
 	</section>
 </template>
@@ -63,9 +72,13 @@ export default {
 <style lang="scss">
 
 .PortfolioEdit {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
+
+	&__title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+	}
 }
 
 </style>
